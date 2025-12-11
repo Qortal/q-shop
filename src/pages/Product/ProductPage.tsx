@@ -42,6 +42,7 @@ import {
 import { ARRRSVG } from "../../assets/svgs/ARRRSVG";
 import { CoinFilter } from "../Store/Store/Store";
 import { setIsLoadingGlobal } from "../../state/features/globalSlice";
+import ReactMarkdown from 'react-markdown';
 
 export const ProductPage = () => {
   const dispatch = useDispatch();
@@ -273,7 +274,7 @@ export const ProductPage = () => {
       <ProductDetailsContainer>
         <ProductTitle variant="h2">{product.title}</ProductTitle>
         <ProductDescription variant="h3">
-          {product.description}
+          <ReactMarkdown>{product.description}</ReactMarkdown>
         </ProductDescription>
         <ProductPriceRow>
           {coinToUse === CoinFilter.qort && (
