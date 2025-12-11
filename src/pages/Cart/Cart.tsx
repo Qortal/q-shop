@@ -83,6 +83,7 @@ import { setPreferredCoin } from "../../state/features/storeSlice";
 import { CoinFilter } from "../Store/Store/Store";
 import { useModal } from "../../components/common/useModal";
 import { MultiplePublish } from "../../components/common/MultiplePublish/MultiplePublish";
+import ReactMarkdown from 'react-markdown';
 
 /* Currency must be replaced in the order confirmation email by proper currency */
 
@@ -1075,7 +1076,7 @@ export const Cart = () => {
                           </ProductInfoCol>
                           <ProductDetailsCol item xs={12} sm={8}>
                             <ProductDescription>
-                              {product.description}
+                              <ReactMarkdown>{product.description}</ReactMarkdown>
                             </ProductDescription>
                             <ProductDetailsRow>
                               <ProductPriceFont>

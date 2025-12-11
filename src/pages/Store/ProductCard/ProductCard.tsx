@@ -18,6 +18,7 @@ import { setNotification } from "../../../state/features/notificationsSlice";
 import { AcceptedCoinRow } from "../Store/Store-styles";
 import { ARRRSVG } from "../../../assets/svgs/ARRRSVG";
 import { CoinFilter } from "../Store/Store";
+import ReactMarkdown from 'react-markdown';
 
 function addEllipsis(str: string, limit: number) {
   if (str.length > limit) {
@@ -99,7 +100,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, exchangeRate,
       <StyledCardContent onClick={goToProductPage}>
         <ProductTitle>{addEllipsis(product?.title || "", 39)}</ProductTitle>
         <ProductDescription>
-          {addEllipsis(product?.description || "", 58)}
+          {product?.description ? 
+            (<ReactMarkdown>{addEllipsis(product.description, 58)}</ReactMarkdown>) : 
+            ("")}
         </ProductDescription>
         <ProductDescription
           style={{
