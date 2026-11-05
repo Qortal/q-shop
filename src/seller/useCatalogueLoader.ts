@@ -1,7 +1,7 @@
 /**
  * Loads the seller's own catalogues (the DOCUMENTs holding up to 10 products
  * each, with their images) only for the products on screen, five at a time
- * (docs/QORTAL.md → Efficiency rules), and keeps them in
+ * (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → Efficiency rules), and keeps them in
  * `global.catalogueHashMap` as the original did (FETCH_QDN_RESOURCE, stored
  * with `user`, `id` and `isValid`).
  *

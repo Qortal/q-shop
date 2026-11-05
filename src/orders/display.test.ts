@@ -205,10 +205,10 @@ describe("payments checked against the seller's shop", () => {
     expect(shopPaymentWarnings({ currency: "ARRR", arrrAddressUsed: "zs1other" } as any, withArrr)).toEqual([
       "The ARRR address in this order isn't your shop's current ARRR address.",
     ]);
-    // A coin Q-Shop+ doesn't take, even one the shop still names.
+    // A coin Q-Shop doesn't take, even one the shop still names.
     const withBtc = { supportedCoins: ["QORT", "BTC"], foreignCoins: { BTC: "bc1shop" } };
     expect(shopPaymentWarnings({ currency: "BTC", foreignAddressUsed: "bc1shop" } as any, withBtc)).toEqual([
-      "This order names a coin Q-Shop+ doesn't know, so its payment can't be checked here.",
+      "This order names a coin Q-Shop doesn't know, so its payment can't be checked here.",
     ]);
     expect(shopPaymentWarnings({ currency: "QORT" } as any, qortOnly)).toEqual([]);
     // A coin the app doesn't know is flagged even when the shop isn't known.

@@ -1,6 +1,6 @@
 /**
  * Pins how the original app reads an order and the seller's status note, and
- * how the seller publishes a status update (docs/apps/Q-Shop+.md → Money
+ * how the seller publishes a status update (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Money
  * code). Written against the upstream code before any change, then ported to
  * the redesigned dialog with the same Hub requests and payloads.
  *

@@ -959,7 +959,7 @@ describe("sorting the products by their columns", () => {
     fireEvent.click(screen.getByRole("button", { name: "Select all" }));
     expect(screen.getByText("1 selected")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Cancel" }));
-    expect(JSON.parse(localStorage.getItem("qshopplus-collapsed-sections") ?? "{}")).toEqual({ [STORE_ID]: ["MUGSxxxxx1"] });
+    expect(JSON.parse(localStorage.getItem("qshop-collapsed-sections") ?? "{}")).toEqual({ [STORE_ID]: ["MUGSxxxxx1"] });
     // A search shows every match.
     fireEvent.change(screen.getByRole("searchbox", { name: "Search your products" }), { target: { value: "mug" } });
     await waitFor(() => expect(names(list).filter(Boolean)).toEqual(["Mug"]));

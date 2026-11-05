@@ -3,7 +3,7 @@
  * mock node (24 shops of 12 products, signed in as a buyer who owns no
  * shop, and as the owner of "my-shop"). The numbers go into the brief's
  * before/after table; the assertions guard the efficiency rules
- * (docs/QORTAL.md): no unlimited search, bounded searches and fetches.
+ * (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md): no unlimited search, bounded searches and fetches.
  */
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { render, waitFor } from "@testing-library/react";

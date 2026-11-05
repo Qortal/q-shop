@@ -2,7 +2,7 @@
  * Auctions (Simon, 2026-10-23, after the auctions of his Qortal Web Builder's
  * Q-Shop block): a product sold to the highest bidder, in QORT.
  *
- * The terms live on the product, additive (docs/apps/Q-Shop+.md → Data
+ * The terms live on the product, additive (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data
  * contract): `auction: {v: 1, start, end, startingBid, reserve?, buyNow?,
  * extendMinutes}`. Bids are documents the bidders publish under their own
  * names (auctions/bids.ts). Everyone works out the same result from the same

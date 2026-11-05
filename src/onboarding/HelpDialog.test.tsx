@@ -9,7 +9,7 @@ describe("help", () => {
     const dialog = screen.getByRole("dialog", { name: "Help" });
     expect(within(dialog).getAllByRole("heading", { level: 3 })).toHaveLength(HELP.flatMap((g) => g.items).length);
     fireEvent.click(within(dialog).getByRole("button", { name: "How do I pay?" }));
-    expect(within(dialog).getByText(/Q-Shop\+ never holds your money/)).toBeVisible();
+    expect(within(dialog).getByText(/Q-Shop never holds your money/)).toBeVisible();
     fireEvent.click(within(dialog).getByRole("button", { name: "How do I start?" }));
     expect(within(dialog).getByRole("button", { name: "How do I pay?" })).toHaveAttribute("aria-expanded", "false");
   });

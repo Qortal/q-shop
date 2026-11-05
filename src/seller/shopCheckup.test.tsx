@@ -61,7 +61,7 @@ afterEach(() => vi.unstubAllGlobals());
 describe("the shop checkup", () => {
   it("lists an older shop's steps, and Fix categories drafts each product in its suggested category only", async () => {
     const store = setup();
-    const card = await screen.findByRole("region", { name: "Get your shop ready for Q-Shop+" });
+    const card = await screen.findByRole("region", { name: "Bring your shop up to date" });
     const steps = within(card).getByRole("list", { name: "Steps" });
     await waitFor(() => expect(within(steps).getAllByRole("listitem").map((li) => li.querySelector("p")?.textContent)).toEqual(expect.arrayContaining(["Pick categories from the list", "Choose where you ship", "Set delivery prices"])));
     expect(within(card).getByText(/3 products still use a category from before/)).toBeInTheDocument();
@@ -89,7 +89,7 @@ describe("the shop checkup", () => {
       </Routes>,
       { store, initialEntries: [`/product-manager/${STORE_ID}`] }
     );
-    const card = await screen.findByRole("region", { name: "Get your shop ready for Q-Shop+" });
+    const card = await screen.findByRole("region", { name: "Bring your shop up to date" });
     expect(within(card).getByText("Add your first product")).toBeInTheDocument();
     fireEvent.click(within(card).getByRole("button", { name: "Add product" }));
     expect(await screen.findByRole("dialog", { name: "Add product" })).toBeInTheDocument();
@@ -106,7 +106,7 @@ describe("the shop checkup", () => {
       })
     );
     const store = setup({ products: { [postage.id]: { created: 5, priceQort: 2, category: "Shipping", catalogueId: CATALOGUE_ID, status: "AVAILABLE" } } });
-    const card = await screen.findByRole("region", { name: "Get your shop ready for Q-Shop+" });
+    const card = await screen.findByRole("region", { name: "Bring your shop up to date" });
     fireEvent.click(await within(card).findByRole("button", { name: "Retire them" }));
     const dialog = await screen.findByRole("dialog", { name: "Retire the delivery-fee products?" });
     expect(within(dialog).getByText(/Postage to Europe/)).toBeInTheDocument();
@@ -116,7 +116,7 @@ describe("the shop checkup", () => {
 
   it("Edit shop opens Shop Settings with its form open", async () => {
     setup({ store: { logo: "" } });
-    const card = await screen.findByRole("region", { name: "Get your shop ready for Q-Shop+" });
+    const card = await screen.findByRole("region", { name: "Bring your shop up to date" });
     fireEvent.click(within(card).getAllByRole("button", { name: "Edit shop" })[0]);
     await waitFor(() => expect(screen.getByTestId("where").textContent).toContain("tab=shop"));
     expect(screen.getByTestId("where").textContent).toContain("edit=1");

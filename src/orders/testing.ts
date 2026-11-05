@@ -1,6 +1,6 @@
 /**
  * Orders and worlds for the order tests: orders shaped as the original
- * publishes them (docs/apps/Q-Shop+.md → Data contract), from the shop
+ * publishes them (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract), from the shop
  * fixtures. Not used by the app.
  */
 import { BUYER, CATALOGUE_ID, SELLER, SHORT_STORE_ID, STORE_TITLE, chair, mug, poster } from "../test/fixtures/shop";

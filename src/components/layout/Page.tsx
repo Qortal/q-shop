@@ -1,5 +1,5 @@
 /**
- * The frame of every page, so all screens line up (docs/DESIGN.md → Layout):
+ * The frame of every page, so all screens line up (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/DESIGN.md → Layout):
  * a centred column (wide for grids, narrow for forms and lists), 16 px side
  * gutters on phones, and a page header with an optional Back button (router
  * history only: Hub tabs share window.history, pitfall 8), a title (the

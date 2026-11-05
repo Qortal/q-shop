@@ -6,7 +6,7 @@
  *    the node doesn't have yet shows "Fetching from peers…" and is asked for
  *    again after 2, 4 and 8 s, then shows "Couldn't open this order" with a
  *    Retry; one that can't be decrypted shows that at once. None of them
- *    stops the others (docs/apps/Q-Shop+.md → Bugs 4);
+ *    stops the others (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Bugs 4);
  * 3. the statuses: the seller's from one search over the shop's statuses
  *    (made with page one, reused by later pages), the buyer's from one
  *    search per page over the page's sellers;
@@ -443,7 +443,7 @@ const statusChecks = new WeakMap<OrderStore, Map<string, Promise<void>>>();
  * The status of one order on its own (the order dialog, when its list hasn't
  * read it): a search for its status document by the seller's name (the
  * original searched by identifier alone, so any name could answer:
- * docs/apps/Q-Shop+.md → Bugs 11), then FETCH + DECRYPT_DATA as pinned.
+ * https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Bugs 11), then FETCH + DECRYPT_DATA as pinned.
  */
 export function ensureOrderStatus(store: OrderStore, order: Order, seller: string, fresh = false): Promise<void> {
   if (!seller) return Promise.resolve();

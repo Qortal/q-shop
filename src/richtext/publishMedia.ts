@@ -1,7 +1,7 @@
 /**
  * Publishing a video or a PDF from the description editor. Hub asks the
  * seller to confirm (and shows the fee and its own progress), and may take up
- * to 30 minutes for a big file (docs/QORTAL.md, pitfall 10). A decline is
+ * to 30 minutes for a big file (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md, pitfall 10). A decline is
  * quiet; after a timeout QDN is asked whether it landed before anything is
  * offered again, so Try again never publishes (and charges) twice.
  */

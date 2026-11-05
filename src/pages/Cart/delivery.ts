@@ -50,7 +50,7 @@ export function saveDelivery(buyerName: string, value: DeliveryInput | null): vo
 }
 
 /** Sent on window when a kept address changes. */
-export const SAVED_DELIVERY_EVENT = "qshopplus-saved-delivery";
+export const SAVED_DELIVERY_EVENT = "qshop-saved-delivery";
 
 /** An empty address for `buyerName` (the name defaults to the buyer's Qortal name). */
 export function emptyDelivery(buyerName: string): DeliveryInput {

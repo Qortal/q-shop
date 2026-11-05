@@ -342,7 +342,7 @@ describe("home page", () => {
       expect(screen.getByRole("combobox", { name: "Ships to" })).toHaveTextContent("Portugal");
     });
 
-    it("an old link to Pays in BTC shows every shop: Q-Shop+ takes QORT, ARRR and assets only", async () => {
+    it("an old link to Pays in BTC shows every shop: Q-Shop takes QORT, ARRR and assets only", async () => {
       const { node } = renderHome({ path: "/?pay=BTC" });
       await waitFor(() => expect(cards()).toHaveLength(24), { timeout: 8000 });
       expect(screen.queryByRole("button", { name: /Remove Pays in/ })).not.toBeInTheDocument();
@@ -420,14 +420,14 @@ describe("home page", () => {
   });
 
   describe("a card's menu", () => {
-    it("copies a Q-Shop+ link to the shop", async () => {
+    it("copies a Q-Shop link to the shop", async () => {
       const writeText = vi.fn(async () => undefined);
       vi.stubGlobal("isSecureContext", true);
       vi.stubGlobal("navigator", { ...navigator, clipboard: { writeText } });
       const { store } = renderHome({ path: "/?sort=az" });
       fireEvent.click(await screen.findByRole("button", { name: "More for Seller's Shop" }));
       fireEvent.click(await screen.findByRole("menuitem", { name: "Copy link" }));
-      await waitFor(() => expect(writeText).toHaveBeenCalledWith("qortal://APP/Q-Shop+/Seller%20Name/q-store-general-my-shop"));
+      await waitFor(() => expect(writeText).toHaveBeenCalledWith("qortal://APP/Q-Shop/Seller%20Name/q-store-general-my-shop"));
       await waitFor(() => expect(store.getState().notifications.alertTypes.alertSuccess).toBe("Link copied"));
     });
 
@@ -438,7 +438,7 @@ describe("home page", () => {
       fireEvent.click(await screen.findByRole("menuitem", { name: "Copy link" }));
       const dialog = await screen.findByRole("dialog", { name: "Copy link" });
       expect(within(dialog).getByRole("textbox", { name: "Link" })).toHaveValue(
-        "qortal://APP/Q-Shop+/Seller%20Name/q-store-general-my-shop"
+        "qortal://APP/Q-Shop/Seller%20Name/q-store-general-my-shop"
       );
     });
 

@@ -7,10 +7,10 @@ import { mapWithConcurrency } from "../../qdn/search";
  */
 export type LoadPhase = "loading" | "retrying" | "failed" | "gone";
 
-/** A resource that isn't on the node yet is asked for again after these waits (docs/DESIGN.md → states). */
+/** A resource that isn't on the node yet is asked for again after these waits (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/DESIGN.md → states). */
 export const RETRY_DELAYS_MS = [2000, 4000, 8000];
 
-/** At most this many loads at once (docs/QORTAL.md → Efficiency). */
+/** At most this many loads at once (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → Efficiency). */
 export const LOAD_CONCURRENCY = 5;
 
 export interface LoadJob<T> {

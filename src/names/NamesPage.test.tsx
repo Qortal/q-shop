@@ -143,7 +143,7 @@ describe("Names", () => {
     await waitFor(() => expect(screen.queryByRole("dialog")).toBeNull());
     // Each card has its link in the top right corner.
     expect(within(screen.getByRole("article", { name: "zed" })).getByRole("button", { name: "Copy link to zed" })).toBeInTheDocument();
-    expect(nameLink("Ann Smith+")).toBe("qortal://APP/Q-Shop+/names/Ann%20Smith%2B");
+    expect(nameLink("Ann Smith+")).toBe("qortal://APP/Q-Shop/names/Ann%20Smith%2B");
   });
 
   it("says when a name's link is to a name no longer for sale", async () => {

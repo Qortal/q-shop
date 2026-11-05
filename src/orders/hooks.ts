@@ -40,7 +40,7 @@ const IDLE: OrderListMeta = {
   loadedAt: 0,
 };
 
-/** A list shown again after this long is read again: the session cache's lifetime (docs/QORTAL.md). */
+/** A list shown again after this long is read again: the session cache's lifetime (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md). */
 export const LIST_REREAD_AFTER_MS = QDN_SEARCH_TTL_MS;
 
 const NO_ITEMS: OrderListItem[] = [];

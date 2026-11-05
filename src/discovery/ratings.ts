@@ -1,7 +1,7 @@
 /**
  * Shop ratings for the home page, from one paged search of every review's
  * identifier: `q-store-review-<shortStoreId>-<uid>-<rating×10>` carries the
- * shop and the rating, so no review is fetched (docs/apps/Q-Shop+.md → Data
+ * shop and the rating, so no review is fetched (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data
  * contract). Loaded on every home visit once the shop index is in, so the
  * cards show their stars (Simon, 2026-10-22: one search of up to 100 review
  * ids, about 10–20 kB with today's 44 reviews).

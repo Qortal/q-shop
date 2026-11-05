@@ -32,15 +32,15 @@ export interface TourStep {
 
 export const TOURS: Record<TourId, { title: string; steps: TourStep[] }> = {
   welcome: {
-    title: "Welcome to Q-Shop+",
+    title: "Welcome to Q-Shop",
     steps: [
       {
         id: "welcome",
         icon: <StorefrontOutlinedIcon />,
         title: "Every Qortal shop in one place",
-        intro: "Q-Shop+ is the marketplace of Qortal: buy straight from sellers, with nothing in between.",
+        intro: "Q-Shop is the marketplace of Qortal: buy straight from sellers, with nothing in between.",
         points: [
-          ["Pay the seller directly", "in QORT, Pirate Chain (ARRR) or Qortal assets (Q-Assets). Q-Shop+ never holds your money."],
+          ["Pay the seller directly", "in QORT, Pirate Chain (ARRR) or Qortal assets (Q-Assets). Q-Shop never holds your money."],
           ["Same shops as Q-Shop", "everything lives on Qortal, so every shop, order and review from Q-Shop is here too."],
           ["New", "delivery prices and options, shop policies, tracking numbers, sales and discount codes, stock counts, auctions, names for sale, favourites, and more."],
         ],
@@ -82,7 +82,7 @@ export const TOURS: Record<TourId, { title: string; steps: TourStep[] }> = {
       {
         id: "sell",
         icon: <SellOutlinedIcon />,
-        title: "Sell on Q-Shop+",
+        title: "Sell on Q-Shop",
         intro: "Open a shop in minutes, and reach every Qortal user.",
         points: [
           ["Products", "a category from one shared list, 10 pictures, videos and PDFs, variants, stock counts, sale prices, or an auction."],

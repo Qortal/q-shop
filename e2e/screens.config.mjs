@@ -1,7 +1,7 @@
 /**
- * Q-Shop+ for the shared screenshot check (scripts/screens.mjs):
+ * Q-Shop for the screenshot check (e2e/screens.mjs):
  *
- *   scripts/screens.mjs Q-Shop+ [--only home,shop] [--themes hub30] [--mode light]
+ *   node e2e/screens.mjs [--only home,shop] [--themes hub30] [--mode light]
  *
  * One small marketplace, served from mocks (nothing reaches a node, every
  * write is declined): 14 shops (owners with a space, a "+" and non-ASCII
@@ -257,23 +257,23 @@ const BIDS = [
   ['my-shop', 9, 'Troll Account', 9000000, now - 2 * DAY],
 ];
 const RICH = {
-  // As Q-Shop+ writes it: the plain description is the formatted one's text (richtext/plainText.ts).
-  description: "Hand-thrown, glazed by hand\nEvery mug is one of a kind: the glaze runs its own way in the kiln.\n• Holds 350 ml\n• Food-safe glaze\nSee the rest of the set at our shop (qortal://APP/Q-Shop+/Seller%203/q-store-general-shop-3).\nVideo: Throwing the mug (qortal://VIDEO/Seller%203/q-store-video-MUGVIDEO01)\nPDF: Mug care guide (qortal://APP/Q-Share/share/Seller%203/qshare_file_care_def456_metadata)\nqortal://APP/Q-Tube/video/Video%20Maker/qtube_vid_kiln_xyz",
+  // As Q-Shop writes it: the plain description is the formatted one's text (richtext/plainText.ts).
+  description: "Hand-thrown, glazed by hand\nEvery mug is one of a kind: the glaze runs its own way in the kiln.\n• Holds 350 ml\n• Food-safe glaze\nSee the rest of the set at our shop (qortal://APP/Q-Shop/Seller%203/q-store-general-shop-3).\nVideo: Throwing the mug (qortal://VIDEO/Seller%203/q-store-video-MUGVIDEO01)\nPDF: Mug care guide (qortal://APP/Q-Share/share/Seller%203/qshare_file_care_def456_metadata)\nqortal://APP/Q-Tube/video/Video%20Maker/qtube_vid_kiln_xyz",
   htmlDescription:
     '<h2>Hand-thrown, glazed by hand</h2><p>Every mug is <strong>one of a kind</strong>: the glaze runs its own way in the kiln.</p><ul><li>Holds 350 ml</li><li>Food-safe glaze</li></ul>' +
-    '<p>See the rest of the set at <a href="qortal://APP/Q-Shop+/Seller%203/q-store-general-shop-3">our shop</a>.</p>' +
+    '<p>See the rest of the set at <a href="qortal://APP/Q-Shop/Seller%203/q-store-general-shop-3">our shop</a>.</p>' +
     '<div class="qshop-embed" data-kind="video" data-name="Seller 3" data-identifier="q-store-video-MUGVIDEO01" data-title="Throwing the mug" data-thumb-name="Seller 3" data-thumb-identifier="q-store-thumb-MUGTHUMB01">Video: Throwing the mug</div>' +
     '<div class="qshop-embed" data-kind="file" data-name="Seller 3" data-identifier="qshare_file_care_abc123" data-title="Mug care guide" data-filename="mug-care.pdf" data-mimetype="application/pdf" data-size="48211" data-link="qortal://APP/Q-Share/share/Seller%203/qshare_file_care_def456_metadata">PDF: Mug care guide</div>' +
     '<p><a href="qortal://APP/Q-Tube/video/Video%20Maker/qtube_vid_kiln_xyz">qortal://APP/Q-Tube/video/Video%20Maker/qtube_vid_kiln_xyz</a></p>',
   morePictures: { id: 'q-store-pictures-shop-3-P000000000', count: 4, sig: '4-a-b' },
 };
 const MY_MEDIA = {
-  // The plain description is the formatted one's text, as Q-Shop+ writes it (richtext/plainText.ts).
-  description: 'Video: How it drapes (qortal://VIDEO/Seller%20Name/q-store-video-SCARFVID01)\nPDF: Size guide (qortal://FILE/Seller%20Name/qshare_file_size_abc123)\nSoft and warm. Matching hats at qortal://APP/Q-Shop+/Seller%20Name/q-store-general-my-shop.',
+  // The plain description is the formatted one's text, as Q-Shop writes it (richtext/plainText.ts).
+  description: 'Video: How it drapes (qortal://VIDEO/Seller%20Name/q-store-video-SCARFVID01)\nPDF: Size guide (qortal://FILE/Seller%20Name/qshare_file_size_abc123)\nSoft and warm. Matching hats at qortal://APP/Q-Shop/Seller%20Name/q-store-general-my-shop.',
   htmlDescription:
     '<div class="qshop-embed" data-kind="video" data-name="Seller Name" data-identifier="q-store-video-SCARFVID01" data-title="How it drapes">Video: How it drapes</div>' +
     '<div class="qshop-embed" data-kind="file" data-name="Seller Name" data-identifier="qshare_file_size_abc123" data-title="Size guide" data-filename="size-guide.pdf" data-mimetype="application/pdf" data-size="31200">PDF: Size guide</div>' +
-    '<p>Soft and warm. Matching hats at qortal://APP/Q-Shop+/Seller%20Name/q-store-general-my-shop.</p>',
+    '<p>Soft and warm. Matching hats at qortal://APP/Q-Shop/Seller%20Name/q-store-general-my-shop.</p>',
 };
 const USD_PRICED = [1, 3, 7, 11];
 function catalogue(s, c) {
@@ -462,8 +462,8 @@ const b64 = (obj) => Buffer.from(JSON.stringify(obj)).toString('base64');
 const json = (route, data, status = 200) => route.fulfill({ status, contentType: 'application/json', body: JSON.stringify(data) });
 
 export default {
-  name: 'Q-Shop+',
-  themeKey: 'qshopplus-ui-theme',
+  name: 'Q-Shop',
+  themeKey: 'qshop-ui-theme',
   dismiss: ['I understand'],
 
   async setup({ browser }) {
@@ -510,11 +510,11 @@ export default {
       if (!sessionStorage.getItem('qsp-seeded')) {
         sessionStorage.setItem('qsp-seeded', '1');
         // The first-run walkthrough and seller guide (onboarding/Walkthrough.tsx) have been seen; their own screens open them.
-        localStorage.setItem('qshopplus-walkthrough', '1');
-        localStorage.setItem('qshopplus-seller-guide', '1');
+        localStorage.setItem('qshop-walkthrough', '1');
+        localStorage.setItem('qshop-seller-guide', '1');
         // A shop hidden on this device (discovery/hiddenShops.ts), for Settings' list.
-        localStorage.setItem('qshopplus-hidden-shops', JSON.stringify([{ owner: 'Seller 13', shortStoreId: 'shop-13', title: 'Knitting Club', at: ${now} }]));
-        localStorage.setItem('qshopplus-cart', JSON.stringify(${JSON.stringify({
+        localStorage.setItem('qshop-hidden-shops', JSON.stringify([{ owner: 'Seller 13', shortStoreId: 'shop-13', title: 'Knitting Club', at: ${now} }]));
+        localStorage.setItem('qshop-cart', JSON.stringify(${JSON.stringify({
           'q-store-general-shop-1': { orders: { [productId(shops[1], 1)]: { productId: productId(shops[1], 1), catalogueId: catalogueId(shops[1], 0), quantity: 2 }, [productId(shops[1], 3)]: { productId: productId(shops[1], 3), catalogueId: catalogueId(shops[1], 0), quantity: 1 } }, lastUpdated: now, storeId: 'q-store-general-shop-1', storeOwner: 'Shop+Plus' },
           'q-store-general-shop-3': { orders: { [productId(shops[3], 2)]: { productId: productId(shops[3], 2), catalogueId: catalogueId(shops[3], 0), quantity: 1 } }, lastUpdated: now - 1000, storeId: 'q-store-general-shop-3', storeOwner: 'Seller 3' },
         })}));
@@ -616,7 +616,7 @@ export default {
         const doc = owned && collectionsOf(owned);
         if (doc) return json(route, doc).then(() => true);
       }
-      // A shop its owner deleted: the tombstones Q-Shop+ writes (docs/apps/Q-Shop+.md → Data contract).
+      // A shop its owner deleted: the tombstones Q-Shop writes (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract).
       if (name === 'Gone Seller' && id === 'q-store-general-gone') return json(route, { deleted: true, title: 'Deleted shop' }).then(() => true);
       if (name === 'Gone Seller' && id === 'q-store-general-gone-datacontainer') return json(route, { storeId: 'q-store-general-gone', shortStoreId: 'gone', owner: 'Gone Seller', products: {}, deleted: true }).then(() => true);
       const shop = shops.find((s) => s.owner === name && (id === s.id || id === `${s.id}-datacontainer` || id.startsWith(`q-store-catalogue-${s.short}-`)));
@@ -946,7 +946,7 @@ export default {
     { key: 'seller-edit-shop-assets', path: `/product-manager/q-store-general-my-shop?tab=shop`, overlay: true, after: async (page) => { await page.waitForTimeout(700); await page.getByRole('button', { name: 'Edit shop' }).first().click({ timeout: 4000 }); const d = page.getByRole('dialog', { name: 'Edit shop' }); await d.getByText(/on the trade portal \(latest trade/).scrollIntoViewIfNeeded({ timeout: 6000 }); await page.waitForTimeout(400); } },
     // A buyer paying in Gold Bar: prices without one convert at the portal's price, with a line saying so.
     { key: 'shop-pay-asset', path: `/${encodeURIComponent('Seller Name')}/q-store-general-my-shop`, after: async (page) => {
-      await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('qshopplus-settings') || '{}'); s.preferredCoin = 'ASSET:81'; localStorage.setItem('qshopplus-settings', JSON.stringify(s)); });
+      await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('qshop-settings') || '{}'); s.preferredCoin = 'ASSET:81'; localStorage.setItem('qshop-settings', JSON.stringify(s)); });
       await page.reload();
       await page.getByText(/1 Gold Bar ≈ 2.00 QORT/).waitFor({ timeout: 8000 });
       await page.waitForTimeout(500);
@@ -982,13 +982,13 @@ export default {
     } },
     { key: 'cart-delivery', path: '/cart', after: async (page) => {
       // The buyer's country (delivery/buyerPlace.ts) prices each shop's delivery in the cart.
-      await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('qshopplus-settings') || '{}'); s.deliverTo = { country: 'Portugal', state: '' }; localStorage.setItem('qshopplus-settings', JSON.stringify(s)); });
+      await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('qshop-settings') || '{}'); s.deliverTo = { country: 'Portugal', state: '' }; localStorage.setItem('qshop-settings', JSON.stringify(s)); });
       await page.reload();
       await page.getByText('Delivery to Portugal:').first().waitFor({ timeout: 8000 });
       await page.waitForTimeout(500);
     } },
     { key: 'shop-free-delivery', path: `/${encodeURIComponent('Shop+Plus')}/q-store-general-shop-1`, after: async (page) => {
-      await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('qshopplus-settings') || '{}'); s.deliverTo = { country: 'Portugal', state: '' }; localStorage.setItem('qshopplus-settings', JSON.stringify(s)); });
+      await page.evaluate(() => { const s = JSON.parse(localStorage.getItem('qshop-settings') || '{}'); s.deliverTo = { country: 'Portugal', state: '' }; localStorage.setItem('qshop-settings', JSON.stringify(s)); });
       await page.reload();
       await page.getByRole('status', { name: 'Free delivery' }).waitFor({ timeout: 8000 });
       await page.waitForTimeout(600);
@@ -1025,16 +1025,16 @@ export default {
     { key: 'seller-ships-to-us', path: `/product-manager/q-store-general-my-shop?tab=shop`, overlay: true, after: async (page) => { await page.waitForTimeout(700); await page.getByRole('button', { name: 'Edit shop' }).first().click({ timeout: 4000 }); const d = page.getByRole('dialog', { name: 'Edit shop' }); await d.getByRole('button', { name: 'USA: the United States, every state' }).click({ timeout: 6000 }); const us = d.getByRole('region', { name: 'Within the United States' }); await us.getByRole('button', { name: 'Lower 48 and DC' }).click(); await us.getByRole('button', { name: 'Choose states' }).click(); await us.getByRole('checkbox', { name: 'Texas' }).click(); await us.evaluate((el) => el.scrollIntoView({ block: 'start' })); await page.waitForTimeout(400); } },
     { key: 'settings', path: '/settings' },
     { key: 'walkthrough', path: '/', overlay: true, after: async (page) => {
-      await page.evaluate(() => localStorage.removeItem('qshopplus-walkthrough'));
+      await page.evaluate(() => localStorage.removeItem('qshop-walkthrough'));
       await page.reload();
-      await page.getByRole('dialog', { name: 'Welcome to Q-Shop+' }).waitFor({ timeout: 10000 });
+      await page.getByRole('dialog', { name: 'Welcome to Q-Shop' }).waitFor({ timeout: 10000 });
       await page.waitForTimeout(400);
     } },
     { key: 'walkthrough-sell', path: '/', overlay: true, after: async (page) => {
-      await page.evaluate(() => localStorage.removeItem('qshopplus-walkthrough'));
+      await page.evaluate(() => localStorage.removeItem('qshop-walkthrough'));
       await page.reload();
-      const d = page.getByRole('dialog', { name: 'Welcome to Q-Shop+' });
-      await d.getByRole('button', { name: 'Step 5: Sell on Q-Shop+' }).click({ timeout: 10000 });
+      const d = page.getByRole('dialog', { name: 'Welcome to Q-Shop' });
+      await d.getByRole('button', { name: 'Step 5: Sell on Q-Shop' }).click({ timeout: 10000 });
       await page.waitForTimeout(400);
     } },
     { key: 'seller-guide', path: '/settings', overlay: true, after: async (page) => {
@@ -1043,7 +1043,7 @@ export default {
       await page.getByRole('dialog', { name: 'How selling works' }).getByRole('button', { name: 'Next' }).click();
       await page.waitForTimeout(400);
     } },
-    { key: 'seller-checkup', path: '/product-manager/q-store-general-my-shop', after: async (page) => { await page.getByRole('region', { name: /Get your shop ready|Your shop is up to date/ }).waitFor({ timeout: 8000 }); await page.waitForTimeout(800); } },
+    { key: 'seller-checkup', path: '/product-manager/q-store-general-my-shop', after: async (page) => { await page.getByRole('region', { name: /Bring your shop up to date|Your shop is up to date/ }).waitFor({ timeout: 8000 }); await page.waitForTimeout(800); } },
     { key: 'seller-fix-categories', path: '/product-manager/q-store-general-my-shop', overlay: true, optional: true, after: async (page) => {
       await page.getByRole('button', { name: 'Fix categories' }).click({ timeout: 8000 });
       await page.getByRole('dialog', { name: 'Fix categories' }).getByRole('list').waitFor({ timeout: 8000 });
@@ -1096,7 +1096,7 @@ export default {
       await page.waitForTimeout(400);
     } },
     { key: 'seller-discounts', path: '/product-manager/q-store-general-my-shop?tab=shop', after: async (page) => {
-      await page.evaluate((list) => localStorage.setItem('qshopplus-discount-codes-q-store-general-my-shop', JSON.stringify(list)), MY_DISCOUNT_LIST);
+      await page.evaluate((list) => localStorage.setItem('qshop-discount-codes-q-store-general-my-shop', JSON.stringify(list)), MY_DISCOUNT_LIST);
       await page.reload();
       const list = page.getByRole('list', { name: 'Discount codes' });
       await list.waitFor({ timeout: 8000 });

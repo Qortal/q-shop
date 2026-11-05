@@ -1,13 +1,12 @@
 /**
- * Q-Shop+ against REAL data, read-only: the shared screenshot runner with
+ * Q-Shop against REAL data, read-only: the shared screenshot runner with
  * every Core GET answered by the local node (QSP_NODE, default
  * http://127.0.0.1:12391) and Hub's read requests emulated over the same
  * GETs. Every write (publish, payment, list change, decrypt) is refused, and
  * nothing but GET reaches the node. A stand-in for the Hub check when no
- * signed-in test Hub is available (docs/HUB-TESTING.md).
+ * signed-in test Hub is available (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/HUB-TESTING.md).
  *
- *   QSP_CONFIG=e2e/screens.realnode.config.mjs scripts/screens.mjs Q-Shop+ …
- *   (or copy over e2e/screens.config.mjs for the run)
+ *   node e2e/screens.mjs --config e2e/screens.realnode.config.mjs --themes hub30
  *
  * Signed out by default; QSP_AS=<name> shows the app as that name (read
  * only: orders can't be decrypted without Hub, so they show as unreadable).
@@ -16,8 +15,8 @@ const NODE = process.env.QSP_NODE || 'http://127.0.0.1:12391';
 const AS = process.env.QSP_AS || '';
 
 export default {
-  name: 'Q-Shop+',
-  themeKey: 'qshopplus-ui-theme',
+  name: 'Q-Shop',
+  themeKey: 'qshop-ui-theme',
   dismiss: ['I understand'],
 
   qortal: () => `
@@ -67,12 +66,12 @@ export default {
 
   // The first-run walkthrough and seller guide (onboarding/Walkthrough.tsx) have been seen.
   initScripts: () => [
-    `try { localStorage.setItem('qshopplus-walkthrough', '1'); localStorage.setItem('qshopplus-seller-guide', '1'); } catch (e) {}`,
+    `try { localStorage.setItem('qshop-walkthrough', '1'); localStorage.setItem('qshop-seller-guide', '1'); } catch (e) {}`,
     // A cart with Biohackers Corner's 1.5 L olive oil, priced 12,800 BHC Coin (Simon's phone, 2026-10-27), and ppmSilver's lip balm.
     `try {
       if (!sessionStorage.getItem('qsp-real-cart')) {
         sessionStorage.setItem('qsp-real-cart', '1');
-        localStorage.setItem('qshopplus-cart', JSON.stringify({
+        localStorage.setItem('qshop-cart', JSON.stringify({
           'q-store-general-bhc': { orders: { 'q-store-product-bhc-6kizo6riub': { productId: 'q-store-product-bhc-6kizo6riub', catalogueId: 'q-store-catalogue-bhc-qFJMncQ0Ms', quantity: 1 } }, lastUpdated: Date.now(), storeId: 'q-store-general-bhc', storeOwner: 'Biohackers Corner' },
         }));
       }

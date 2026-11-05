@@ -2,7 +2,7 @@
  * The version shown in Settings → About and the changelog dialog. Keep it in
  * step with package.json's "version" (a test checks).
  */
-export const APP_VERSION = "1.0.1";
+export const APP_VERSION = "2.0.0";
 
 export interface Release {
   version: string;
@@ -14,27 +14,11 @@ export interface Release {
 /** Newest first. */
 export const CHANGELOG: Release[] = [
   {
-    version: "1.0.1",
-    date: "2026-11-01",
-    title: "Easier selling, and a Q-Mail when an order ships",
+    version: "2.0.0",
+    date: "2026-11-05",
+    title: "Q-Shop 2.0",
     notes: [
-      "Marking an order Shipped now asks whether to tell the buyer by Q-Mail, with what shipped, the carrier, the tracking number and your note, ready to change or send.",
-      "On your own product's page, Edit product opens its form, and View as customer shows the page as buyers see it (their buttons show, but don't work there).",
-      "The product form has Collections: put a product in your collections, or take it out, as you add or edit it. A product with variants goes in with all its items.",
-      "A product you've already saved can now be given variants. It becomes the first item and keeps its link, reviews and favourites; the others are added as new products.",
-      "Drag a product's pictures, variants and values into order, with a mouse, or on a phone by pressing and holding first (a variant by its handle).",
-      "A picture added for a variant or item also joins the product's pictures (up to 10), to move or star as the main one. A product listed as one shows its starred picture on its card.",
-      "Variant items are named with a bar, \"Glasses | Round / Pale\", instead of a dash. Items already published keep theirs until their product is saved again.",
-      "Markdown in descriptions: pasted from a notes app, it comes into a product's description formatted, and a product's or shop's plain description written with it shows formatted.",
-      "Recently viewed shows a product with variants once, as the one you looked at last.",
-    ],
-  },
-  {
-    version: "1.0.0",
-    date: "2026-10-25",
-    title: "Q-Shop+ 1.0",
-    notes: [
-      "Same QDN data as Q-Shop: your shops, products, orders and reviews show here, and what you publish here still opens in the original.",
+      "Same QDN data as earlier versions of Q-Shop: your shops, products, orders and reviews show here, and what you publish here still opens in them. First published as Q-Shop+ (1.0.0, October 2026) and tested with the community.",
       "Find things: search shops by name, title and description; sort by newest, recently active, most products, top rated (weighted by how many reviews) or A–Z; filter by the coins a shop takes; stars on every shop; a New products strip.",
       "Products: every shop's products in one place, newest first, with search, sorts, one or several categories, a price range and in stock only.",
       "One list of categories for every shop (based on eBay's and Amazon's), each with its icon, so the same kind of product is found together. Sellers find a category by typing what the product is (\"glasses\", \"ghee\"), and the title suggests one; products saved before keep theirs until the seller picks one.",
@@ -47,7 +31,7 @@ export const CHANGELOG: Release[] = [
       "Shops pick the countries they ship to: tick a region (Europe, North America, Asia…) for all its countries, then untick the ones you don't ship to, or the USA at a tap; within the United States, every state, the lower 48 and DC, or the states you choose. Checkout tells a buyer before paying when a shop doesn't ship to their country or state.",
       "Checkout can remember your delivery address in this browser for next time (never published; Settings shows it and forgets it).",
       "Delivery prices: in the seller page's Delivery tab, sellers price delivery by zone (countries, regions and US states): the first item, each extra item, and free delivery from an amount, in the shop's currency (USD…) with QORT and ARRR from its rates, or in QORT. Shipping profiles give some products their own prices (heavy items, say). Checkout adds the fee for the buyer's address as one more line of the order, paid with it.",
-      "Variants: a product can come in variants of your own (Round, Square…), each with its own values (Pale, Orange…, with a colour circle if you like), and each with its own price, stock and picture; drag to put them in order. List them as one product buyers choose from, or each on its own. Each is a product of its own, so Q-Shop lists them too. Its page shows every item's picture, and choosing a picture chooses its item. Editing any item edits the whole product: add or take out values, rename and reorder them, and set each item's stock.",
+      "Variants: a product can come in variants of your own (Round, Square…), each with its own values (Pale, Orange…, with a colour circle if you like), and each with its own price, stock and picture; drag to put them in order. List them as one product buyers choose from, or each on its own. Each is a product of its own, so earlier versions of Q-Shop list them too. Its page shows every item's picture, and choosing a picture chooses its item. Editing any item edits the whole product: add or take out values, rename and reorder them, and set each item's stock.",
       "A wider product form, in panels: pictures beside what it is and its price. Pictures in Shops and Products come a little closer when you point at them.",
       "Favourites: keep shops and products with the heart on their pages (or a shop card's menu), find them under the heart beside your name, and sort Shops and Products by Most loved. Hide a shop you don't want to see (Settings shows it again).",
       "Collections: sellers group their products into collections, each with a picture and a description, in the order they choose; buyers browse them at the top of a shop, switching between them smoothly, and can share a collection's link.",
@@ -59,7 +43,15 @@ export const CHANGELOG: Release[] = [
       "Your cart survives a reload, keeps every shop's items apart, shows each item on one row where there's room, and the cart button counts them.",
       "Orders: My orders with status filters and counts; once an order has shipped, mark it delivered and review the shop. For sellers, an overview, orders to handle, status updates and payment checks against the chain.",
       "Selling: Create Shop until you have one, then Manage Shop (Manage on phones) opens a seller page with products, collections, orders (opening on the ones to handle), reviews, delivery and shop settings, product prices per coin and asset, new products physical unless you pick digital, and big catalogues published in batches.",
-      "Delete products, one or several at once, or close your shop for good: they leave your shop here and in Q-Shop, and orders keep their own copy. A deleted shop's id can be used again.",
+      "Marking an order Shipped asks whether to tell the buyer by Q-Mail, with what shipped, the carrier, the tracking number and your note, ready to change or send.",
+      "On your own product's page, Edit product opens its form, and View as customer shows the page as buyers see it (their buttons show, but don't work there).",
+      "The product form has Collections: put a product in your collections, or take it out, as you add or edit it. A product with variants goes in with all its items.",
+      "A product you've already saved can be given variants. It becomes the first item and keeps its link, reviews and favourites; the others are added as new products.",
+      "Drag a product's pictures, variants and values into order, with a mouse, or on a phone by pressing and holding first (a variant by its handle).",
+      "A picture added for a variant or item also joins the product's pictures (up to 10), to move or star as the main one. A product listed as one shows its starred picture on its card.",
+      "Markdown in descriptions: pasted from a notes app, it comes into a product's description formatted, and a product's or shop's plain description written with it shows formatted.",
+      "Recently viewed shows a product with variants once, as the one you looked at last.",
+      "Delete products, one or several at once, or close your shop for good: they leave your shop here and in earlier versions of Q-Shop, and orders keep their own copy. A deleted shop's id can be used again.",
       "Trusted reviews: one per reviewer, the shop owner's own left out, and an \"Ordered here\" badge.",
       "Delivery options: sellers add Express, Tracked or their own, each priced in the zones that offer it, and buyers pick one at checkout. Pickup points have their own card, each with its country, address, days and hours (picked from a list or typed); they're free in their country, and checkout asks only who collects it and how to reach them. Product pages show what delivery costs to your country, with each option, before anything goes in the cart; Shops and Products can show only what ships to your country.",
       "Shop policies: how soon an order is dispatched, whether the shop takes returns and within how long, its terms and the languages its seller answers in, shown on the shop, its products, checkout and your order; a seller away for a while says until when. Shipped orders can carry the carrier and tracking number, which the buyer copies from the order.",
@@ -69,7 +61,7 @@ export const CHANGELOG: Release[] = [
       "Prices in every coin a shop takes on its product pages (two or three side by side, more in a list), and stock counts: count a product's stock, or each variant's, and it sells out by itself.",
       "Names: buy and sell Qortal names with everything published under them, at a price or by auction, alongside the Names app's own marketplace (Settings can hide them).",
       "For sellers, the Overview shows recent activity (orders, reviews, favourites, deliveries) and a checkup that brings an older shop up to date: categories from the list, the countries it ships to, delivery prices, and products once used to charge delivery. Duplicate a product from its editor, and change several products' status at once.",
-      "A walkthrough of what's new when you first open Q-Shop+, and a seller guide the first time you open your shop; both again from Settings, with Help: short answers on paying, delivery, safety, problems and selling.",
+      "A walkthrough of what's new when you first open Q-Shop, and a seller guide the first time you open your shop; both again from Settings, with Help: short answers on paying, delivery, safety, problems and selling.",
       "Unpublished changes stay in view: whenever products, collections, delivery prices or discount codes wait, Manage Shop shows an orange Publish changes button at the bottom right, and leaving asks whether to publish them, keep them as drafts (kept on this device, even after a restart) or discard them.",
       "For sellers: products running low on the Overview, orders that say when they're due to leave, Copy address for shipping labels, and one price everywhere you ship as a first delivery zone.",
       "Built for phones and GO: a bottom bar with Shops, Products, Cart, Orders and Manage, a header that hides as you scroll, and dialogs that fill the screen.",

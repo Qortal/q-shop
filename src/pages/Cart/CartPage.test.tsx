@@ -296,7 +296,7 @@ describe("cart page", () => {
   });
 
   it("fetches each owner's copy of a catalogue once, even when two names publish the same identifier", async () => {
-    // Another name can publish a catalogue under the seller's identifier (docs/QORTAL.md → pitfall 15).
+    // Another name can publish a catalogue under the seller's identifier (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 15).
     const OTHER = "Mallory";
     const OTHER_STORE = "q-store-general-mallory";
     const copyMug = { ...mug, id: "q-store-product-mallory-COPYxxxxxx", title: "Mallory mug" };

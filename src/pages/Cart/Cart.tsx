@@ -265,7 +265,7 @@ export function Cart() {
             Undo
           </Button>
         }
-        // Above the phone's bottom bar (docs/QORTAL.md → pitfall 6).
+        // Above the phone's bottom bar (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 6).
         sx={{ [`@media ${PHONE_MEDIA}`]: { bottom: "calc(88px + env(safe-area-inset-bottom, 0px))" } }}
       />
     </>

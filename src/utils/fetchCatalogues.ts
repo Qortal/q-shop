@@ -1,7 +1,7 @@
 /**
  * Catalogues: DOCUMENT `q-store-catalogue-<shortStoreId>-<uid>` under the
  * shop owner's name, each holding up to 10 products with their images
- * (docs/apps/Q-Shop+.md → Data contract). The app keeps them in
+ * (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract). The app keeps them in
  * `global.catalogueHashMap` as `{ ...json, id, user, isValid: true }`.
  */
 import type { Catalogue } from "../state/features/globalSlice";
@@ -45,7 +45,7 @@ export function deletedCatalogue(owner: string, catalogueId: string): LoadedCata
 /**
  * One catalogue, through the session cache (one request per catalogue,
  * shared by every screen). The id and owner are the ones asked for, never
- * the body's (docs/QORTAL.md → pitfall 15). Rejects when the node can't give
+ * the body's (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 15). Rejects when the node can't give
  * it or it isn't a catalogue; a deleted one is empty.
  */
 export async function fetchCatalogue(owner: string, catalogueId: string, options: { fresh?: boolean } = {}): Promise<LoadedCatalogue> {

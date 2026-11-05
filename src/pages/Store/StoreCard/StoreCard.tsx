@@ -3,7 +3,7 @@
  * (named by its title), with a separate "More" button for Open shop and Copy
  * link. Title, description and owner come from the search row at once; the
  * shop's JSON (logo and coins) is read only when the card nears the screen
- * (docs/QORTAL.md → Efficiency rules 6), with "Fetching from peers…" while the
+ * (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → Efficiency rules 6), with "Fetching from peers…" while the
  * node gets it and a plain placeholder, never an endless skeleton, if it
  * can't.
  */

@@ -25,7 +25,7 @@ export const stickyBelowHeader = (theme: Theme, padTop: string) =>
     "@media (prefers-reduced-motion: reduce)": { transition: "none" },
   }) as const;
 
-/** The sticky, translucent header (docs/DESIGN.md → Layout → Headers). */
+/** The sticky, translucent header (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/DESIGN.md → Layout → Headers). */
 export const CustomAppBar = styled(AppBar, {
   shouldForwardProp: (prop) => prop !== "collapsed",
 })<{ collapsed?: boolean }>(({ theme, collapsed }) => ({

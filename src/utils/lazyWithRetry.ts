@@ -10,7 +10,7 @@
 import { lazy, type ComponentType } from "react";
 
 export const RETRY_AFTER_MS = 2_000;
-const RELOADED_KEY = "qshopplus-chunk-reload";
+const RELOADED_KEY = "qshop-chunk-reload";
 const RELOAD_GAP_MS = 60_000;
 
 /** A page's file couldn't be fetched (any browser's wording), not an error in its code. */

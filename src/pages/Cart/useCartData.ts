@@ -12,7 +12,7 @@
  * - A catalogue already in `catalogueHashMap` (for this owner) is used as is;
  *   otherwise it is fetched with the app's catalogue reader and kept here by
  *   owner + identifier. That map is keyed by identifier only, and another
- *   name can publish a catalogue under the same identifier (docs/QORTAL.md →
+ *   name can publish a catalogue under the same identifier (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md →
  *   pitfall 15): a copy loaded for one cart must never evict the copy another
  *   cart needs, or each load would send the other cart to fetch again, for
  *   as long as the page is open. A copy is added to the shared map only when

@@ -1,5 +1,5 @@
 /**
- * Settings (docs/DESIGN.md → Settings page): Account, Appearance, Shopping,
+ * Settings (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/DESIGN.md → Settings page): Account, Appearance, Shopping,
  * Sync and About, in that order. Every choice applies at once and is kept on
  * this device; Sync saves the theme and preferred coin to QDN only when asked.
  */
@@ -38,7 +38,7 @@ import {
   ORIGINAL_APP_LINK,
   ORIGINAL_APP_NAME,
   REPO_URL,
-  UPSTREAM_REPO_URL,
+  PLUS_REPO_URL,
 } from "../../constants/plus";
 import { COINS, coinLabel, type CoinTicker } from "../../money/coins";
 import { isHubDecline, isHubTimeout } from "../../qdn/hubErrors";
@@ -522,8 +522,8 @@ export function SettingsPage() {
       <Section title="About">
         <Row>
           <RowLabel title={`${APP_NAME} ${APP_VERSION}`}>
-            Simon&apos;s version of Qortal&apos;s {ORIGINAL_APP_NAME}. It reads and writes the same shops, products, orders
-            and reviews.
+            Qortal&apos;s marketplace Q-App. Version 2 was built as Q-Shop+ by Simon James; it reads and writes the same
+            shops, products, orders and reviews as earlier versions.
           </RowLabel>
           <Buttons>
             <Button variant="outlined" startIcon={<HistoryOutlinedIcon />} onClick={() => setChangelogOpen(true)}>
@@ -561,19 +561,19 @@ export function SettingsPage() {
           </Row>
         )}
         {[
-          { label: "Source", url: REPO_URL },
-          { label: "Upstream", url: UPSTREAM_REPO_URL },
-        ].map(({ label, url }) => (
+          { label: "Source", url: REPO_URL, what: "source" },
+          { label: "Built as Q-Shop+ in", url: PLUS_REPO_URL, what: "Q-Shop+" },
+        ].map(({ label, url, what }) => (
           <Row key={label}>
             <RowLabel title={label}>
               <Box component="span" sx={{ overflowWrap: "anywhere", userSelect: "all" }}>
                 {url}
               </Box>
             </RowLabel>
-            <Tooltip title={`Copy the ${label.toLowerCase()} link`}>
+            <Tooltip title={`Copy the ${what} link`}>
               <IconButton
-                aria-label={`Copy the ${label.toLowerCase()} link`}
-                onClick={() => copy(url, `${label} link`)}
+                aria-label={`Copy the ${what} link`}
+                onClick={() => copy(url, `The ${what} link`)}
                 sx={{ minWidth: 44, minHeight: 44 }}
               >
                 <ContentCopyOutlinedIcon fontSize="small" />

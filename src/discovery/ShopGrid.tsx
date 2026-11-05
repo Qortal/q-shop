@@ -1,6 +1,6 @@
 /**
  * The home page's grid of shop cards: one column on phones, then 2, 3 and 4
- * as the window widens (docs/DESIGN.md → Layout: grids widen on desktop), and
+ * as the window widens (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/DESIGN.md → Layout: grids widen on desktop), and
  * placeholder cards of the same shape while the first shops load.
  */
 import { Box, Skeleton } from "@mui/material";

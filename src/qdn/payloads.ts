@@ -1,7 +1,7 @@
 /**
  * Pure builders for every QDN write the shop makes, other than the order
  * itself (src/money/order.ts). Each one reproduces the original Q-Shop's
- * payload exactly, key order included (docs/apps/Q-Shop+.md → Data contract;
+ * payload exactly, key order included (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract;
  * pinned by payloads.test.ts and the *.pin tests that run the components).
  */
 import type { ShopPolicies } from "../shop/policies";

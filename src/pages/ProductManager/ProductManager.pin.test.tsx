@@ -3,7 +3,7 @@
  * catalogue is topped up to 10 products, then new catalogues are opened, and
  * the data container (the shop's product index) goes last in one
  * PUBLISH_MULTIPLE_QDN_RESOURCES. Written against the upstream code before any
- * change (docs/apps/Q-Shop+.md → Data contract). Ported to the redesigned
+ * change (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract). Ported to the redesigned
  * seller page on night 1: only the button it presses changed ("Save Products"
  * became "Publish" in Ready to publish); every expectation is the original's.
  */

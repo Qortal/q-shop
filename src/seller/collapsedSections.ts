@@ -6,7 +6,7 @@
  */
 import { useCallback, useMemo, useState } from "react";
 
-const KEY = "qshopplus-collapsed-sections";
+const KEY = "qshop-collapsed-sections";
 /** Shops remembered, most recent last. */
 const MAX_SHOPS = 50;
 

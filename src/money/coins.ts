@@ -1,7 +1,7 @@
 /**
  * The coins a shop can take: QORT and ARRR, the original's, and Qortal
  * assets (Q-Assets), paid with Hub's TRANSFER_ASSET (additive data,
- * docs/apps/Q-Shop+.md → Data contract). Hub's SEND_COIN also pays BTC, LTC,
+ * https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract). Hub's SEND_COIN also pays BTC, LTC,
  * DOGE, DGB and RVN; Q-Shop+'s test builds offered them until Simon took them
  * out (round 5), so a shop, price, order or setting that still names one is
  * read as without it.

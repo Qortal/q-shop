@@ -4,7 +4,7 @@
  * different sellers").
  *
  * The list comes from the shops' product indexes, the DOCUMENT
- * `<storeId>-datacontainer` each shop keeps (docs/apps/Q-Shop+.md → Data
+ * `<storeId>-datacontainer` each shop keeps (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data
  * contract): for every product its catalogue, `created`, QORT price,
  * category and status, about 120 bytes each. Titles and pictures live in the
  * catalogues, which are big (on Simon's node in October 2026, 131 catalogues
@@ -16,7 +16,7 @@
  *   original's hidden test shop) and its search of the product indexes
  *   (discovery/activity.ts), which gives each one's last update. Both are
  *   the home page's own searches, cached for the session.
- * - Trust (docs/QORTAL.md → pitfall 15): an index and its catalogues are
+ * - Trust (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 15): an index and its catalogues are
  *   read under the shop owner's name, never another name's copy.
  * - Newest first without reading every index: indexes are read most
  *   recently updated first, a batch at a time, only as far as the page

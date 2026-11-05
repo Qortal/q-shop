@@ -40,7 +40,7 @@ export interface AddedNotice {
   quantity: number;
 }
 
-/** "Added to cart · View cart", above the phone's bottom bar (docs/QORTAL.md → pitfall 6). */
+/** "Added to cart · View cart", above the phone's bottom bar (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 6). */
 export function AddedToCartSnackbar({ notice, onClose }: { notice: AddedNotice | null; onClose: () => void }) {
   const navigate = useNavigate();
   const what = notice ? (notice.quantity > 1 ? `${notice.quantity} × ${notice.title}` : notice.title) : "";

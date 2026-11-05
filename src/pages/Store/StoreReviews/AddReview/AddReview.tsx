@@ -8,7 +8,7 @@
  *
  * What changed around it: a Hub decline is a quiet cancel; Hub gets its
  * full 30 minutes for the publish, and after a timeout QDN is checked
- * before saying it failed, so Retry never pays the fee twice (docs/QORTAL.md
+ * before saying it failed, so Retry never pays the fee twice (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md
  * → pitfalls 10 and 11).
  */
 import { useRef, useState } from "react";
@@ -25,7 +25,7 @@ import { errorMessage, isHubDecline, isHubTimeout } from "../../../../qdn/hubErr
 import { invalidateQdnSearches, resourceExists } from "../../../../qdn/search";
 import { isReviewSearchUrl } from "../../reviewsData";
 
-/** Hub allows a publish up to 30 minutes (docs/QORTAL.md → pitfall 10). */
+/** Hub allows a publish up to 30 minutes (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 10). */
 const REVIEW_PUBLISH_TIMEOUT_MS = 30 * 60_000;
 export const REVIEW_TITLE_MAX = 180;
 

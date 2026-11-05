@@ -1,5 +1,5 @@
 /**
- * The home page's list of shops (docs/apps/Q-Shop+.md → Missing features 1–2).
+ * The home page's list of shops (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Missing features 1–2).
  *
  * - The shop index: one paged, cached search of every STORE resource with
  *   its metadata, so titles and descriptions show at once, without fetching

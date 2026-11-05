@@ -710,7 +710,7 @@ function ShopPage({ owner, storeId }: { owner: string; storeId: string }) {
   } else {
     content = (
       <>
-        {/* The owner's own shop, from before Q-Shop+: the checkup waits in Manage Shop (seller/checkup.ts). */}
+        {/* The owner's own shop, from before Q-Shop 2: the checkup waits in Manage Shop (seller/checkup.ts). */}
         {isOwner && openSteps > 0 && (
           <Alert
             severity="info"
@@ -721,7 +721,7 @@ function ShopPage({ owner, storeId }: { owner: string; storeId: string }) {
               </Button>
             }
           >
-            {openSteps === 1 ? "1 step brings your shop up to date for Q-Shop+." : `${openSteps} steps bring your shop up to date for Q-Shop+.`} Each takes a minute.
+            {openSteps === 1 ? "1 step brings your shop up to date for this version of Q-Shop." : `${openSteps} steps bring your shop up to date for this version of Q-Shop.`} Each takes a minute.
           </Alert>
         )}
         <ShopHeader

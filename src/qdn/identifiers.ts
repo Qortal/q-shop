@@ -1,6 +1,6 @@
 /**
  * The QDN identifiers Q-Shop reads and writes. They are shared data: the + app
- * and the original must build exactly the same ones (docs/apps/Q-Shop+.md →
+ * and the original must build exactly the same ones (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md →
  * Data contract; pinned by the *.pin tests and identifiers.test.ts).
  */
 

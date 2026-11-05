@@ -234,7 +234,7 @@ describe("product page", { timeout: 20_000 }, () => {
     renderProduct(makeWorld(), pathOf(P11));
     fireEvent.click(await screen.findByRole("button", { name: "Share" }));
     await waitFor(() =>
-      expect(copyText).toHaveBeenCalledWith(`qortal://APP/Q-Shop+/Seller%20Name/${STORE_ID}/${P11}/${CAT1}`)
+      expect(copyText).toHaveBeenCalledWith(`qortal://APP/Q-Shop/Seller%20Name/${STORE_ID}/${P11}/${CAT1}`)
     );
   });
 

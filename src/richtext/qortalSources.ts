@@ -7,7 +7,7 @@
  *   `videoImage` is the video's thumbnail (a data URL: Q-Tube publishes no
  *   THUMBNAIL), shown until it plays unless the seller picks their own.
  * - A Q-Share link names a share's JSON document (`qshare_file_…_metadata`),
- *   whose `files` name its FILE resources (docs/apps/Q-Share+.md → Data
+ *   whose `files` name its FILE resources (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Share%2B.md → Data
  *   contract).
  * - A video uploaded in the editor is published as a VIDEO resource of the
  *   seller's, `q-store-video-<uid>`, seen in Q-Shop+ only.
@@ -17,7 +17,7 @@
  *   description links to it there.
  *
  * Another name can publish under any identifier, so only what the link's
- * own name published is used (docs/QORTAL.md, pitfall 15).
+ * own name published is used (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md, pitfall 15).
  */
 import ShortUniqueId from "short-unique-id";
 import { fetchQdnJson } from "../qdn/search";

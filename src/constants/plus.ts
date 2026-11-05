@@ -1,7 +1,7 @@
 /**
- * Everything that makes this build "Q-Shop+" rather than the original Q-Shop
- * lives here, so the upstream "Ship as" commit only has to edit this file
- * (docs/RELEASE.md, stage 4):
+ * The app's name and the names built from it. This version was built and
+ * tested as "Q-Shop+" in https://github.com/SJQortal/Q-Apps-Plus, and every
+ * difference between that build and Q-Shop itself lives here:
  *
  * - the app's name, and the name written into copied `qortal://APP/…` links;
  * - the original app's name and link;
@@ -15,36 +15,37 @@
  * vite.config.ts.
  *
  * The QDN identifiers of stores, products, catalogues, orders and reviews are
- * NOT here: they are shared data (docs/apps/Q-Shop+.md → Data contract), and
+ * NOT here: they are shared data (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract), and
  * the + app and the original must read and write the same ones
  * (src/qdn/identifiers.ts).
  */
 
 /** The name this build is published under, shown in the header and About. */
-export const APP_NAME = "Q-Shop+";
+export const APP_NAME = "Q-Shop";
 
 /**
  * The app name in copied `qortal://APP/<name>/…` links. Hub never decodes the
- * app name, so the `+` is written literally (docs/QORTAL.md → Deep links).
+ * app name, so a `+` would be written literally (as Q-Shop+ did).
  */
-export const LINK_APP_NAME = "Q-Shop+";
+export const LINK_APP_NAME = "Q-Shop";
 
 /** The original app, by its QDN name. */
 export const ORIGINAL_APP_NAME = "Q-Shop";
 
-/** Opens the original app (Settings → About). Null hides the link. */
-export const ORIGINAL_APP_LINK: string | null = `qortal://APP/${ORIGINAL_APP_NAME}`;
+/** Opens the original app (Settings → About). Null hides the link: this is Q-Shop. */
+export const ORIGINAL_APP_LINK: string | null = null;
 
 /**
  * The mail app that "Message the seller/buyer" links and the account menu
- * open: the original Q-Mail (Simon, 2026-10-22: Q-Mail has been updated with
- * Q-Mail+'s changes, so links go to it rather than the + testground). It
- * opens `/to/<name>` at a new message to that name.
+ * open. Q-Mail opens `/to/<name>` at a new message to that name.
  */
 export const MAIL_APP_NAME = "Q-Mail";
 
-/** Prefix of every browser storage key this build writes. */
-export const STORAGE_PREFIX = "qshopplus-";
+/**
+ * Prefix of every browser storage key this build writes. All Q-Apps on a node
+ * share one origin; Q-Shop+ uses "qshopplus-", so the two keep their own.
+ */
+export const STORAGE_PREFIX = "qshop-";
 
 /** The chosen theme (JSON string, e.g. "hub30"); also read by index.html's boot snippet. */
 export const THEME_STORAGE_KEY = `${STORAGE_PREFIX}ui-theme`;
@@ -85,8 +86,8 @@ export const PENDING_FAVORITES_STORAGE_KEY = `${STORAGE_PREFIX}pending-favorites
 export const HIDDEN_SHOPS_STORAGE_KEY = `${STORAGE_PREFIX}hidden-shops`;
 
 /** Settings → Sync: a DOCUMENT under the user's name (additive data). */
-export const SETTINGS_SYNC_IDENTIFIER = "qshopplus_settings";
+export const SETTINGS_SYNC_IDENTIFIER = "qshop_settings";
 
-/** Settings → About. */
-export const REPO_URL = "https://github.com/SJQortal/Q-Apps-Plus";
-export const UPSTREAM_REPO_URL = "https://github.com/Qortal/q-shop";
+/** Settings → About: this app's source, and where it was built as Q-Shop+. */
+export const REPO_URL = "https://github.com/Qortal/q-shop";
+export const PLUS_REPO_URL = "https://github.com/SJQortal/Q-Apps-Plus";

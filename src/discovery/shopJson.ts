@@ -15,7 +15,7 @@ import type { ShopAsset } from "../money/coins";
 import { assetPricingOf } from "../money/assetRates";
 import { withShippingTags } from "../constants/shipping";
 
-/** The STORE JSON as the original writes it, plus the + app's additive fields (docs/apps/Q-Shop+.md → Data contract). */
+/** The STORE JSON as the original writes it, plus the + app's additive fields (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract). */
 export interface ShopJson {
   title?: string;
   description?: string;

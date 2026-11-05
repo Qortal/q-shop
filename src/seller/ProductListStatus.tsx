@@ -3,7 +3,7 @@
  * simply loaded (hooks/useOwnShops.ts sets `global.ownShopStatus`):
  * - `container-missing`: the shop has none on QDN; the seller can create an
  *   empty one (Hub confirms). Nothing is ever published without asking: the
- *   original published one at start-up (docs/apps/Q-Shop+.md → Bugs 2).
+ *   original published one at start-up (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Bugs 2).
  * - `unavailable`: it exists but the node can't serve it yet: "Fetching from
  *   peers…", asked again after 2, 4 and 8 seconds, then Retry.
  * - `error`: the shop itself couldn't be read: Retry.

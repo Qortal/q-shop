@@ -1,6 +1,6 @@
 /**
  * The home page's search field and its sort and filters: a row on desktop,
- * a "Sort & filter" button and a bottom sheet on phones (docs/DESIGN.md →
+ * a "Sort & filter" button and a bottom sheet on phones (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/DESIGN.md →
  * Mobile: menus and filters open as sheets).
  */
 import { useEffect, useRef, useState, type ReactNode } from "react";

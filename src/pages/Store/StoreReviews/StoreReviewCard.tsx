@@ -44,7 +44,7 @@ interface FullReview {
 export function StoreReviewCard({ review, orderedHere }: { review: ShopReview; orderedHere: boolean }) {
   const { getReview, hashMapStoreReviews } = useFetchStoreReviews();
   // The shared cache keeps full reviews by identifier only, and another name
-  // can publish under the same identifier (docs/QORTAL.md → pitfall 15): only
+  // can publish under the same identifier (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 15): only
   // a body this reviewer published counts, and the one this card read wins.
   const cached = hashMapStoreReviews[review.id] as FullReview | undefined;
   const [read, setRead] = useState<FullReview | null>(null);

@@ -1,12 +1,12 @@
 /**
  * Every `/arbitrary/resources/search` and every resource JSON the app reads
- * goes through here (docs/QORTAL.md → Efficiency rules), after Q-Share+'s
+ * goes through here (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → Efficiency rules), after Q-Share+'s
  * `utils/qdnSearch.ts`:
  * - no search is ever unlimited: `limit` 0 or missing becomes a page of 20;
  * - identical requests already in flight share one promise;
  * - results are reused for a short session TTL, and dropped after a publish;
  * - names are encoded (URLSearchParams / encodeURIComponent), so names with a
- *   space, `+` or `/` work (docs/QORTAL.md → pitfall 9).
+ *   space, `+` or `/` work (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 9).
  *
  * `excludeblocked` is off unless a caller asks: the original Q-Shop never
  * sends it, and orders, statuses and reviews must show the same rows as there.
@@ -211,7 +211,7 @@ const jsonInflight = new Map<string, Promise<unknown>>();
 
 /**
  * A resource's JSON, cached for the session by service, name and identifier
- * (docs/QORTAL.md → pitfall 15: another name can publish the same
+ * (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 15: another name can publish the same
  * identifier). A Core `{ error }` body or an HTTP error rejects with a
  * QdnFetchError and isn't cached; the delete marker or a tombstone rejects
  * with a QdnDeletedError.

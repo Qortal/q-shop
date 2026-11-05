@@ -13,7 +13,7 @@ describe("ConsentModal", () => {
   it("shows the welcome notice once, and records it only when acknowledged", async () => {
     await localForage.removeItem(CONSENT_KEY);
     const first = renderWithProviders(<ConsentModal />);
-    const dialog = await screen.findByRole("dialog", { name: "Welcome to Q-Shop+" });
+    const dialog = await screen.findByRole("dialog", { name: "Welcome to Q-Shop" });
     expect(dialog).toHaveTextContent(/cannot be held accountable/);
     expect(await localForage.getItem(CONSENT_KEY)).toBeNull();
     await act(async () => {

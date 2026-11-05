@@ -1,7 +1,7 @@
 /**
  * How busy each shop is, from one paged search of the shops' product indexes
  * (the DOCUMENT `<storeId>-datacontainer` each shop publishes and republishes
- * whenever its products change; docs/apps/Q-Shop+.md → Data contract):
+ * whenever its products change; https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract):
  * - its `updated` time: when the shop's products last changed (Recently active);
  * - its `size` in bytes: grows by about 120 bytes per product, so it stands in
  *   for the number of products (Most products) without fetching any index.

@@ -1,8 +1,8 @@
 /**
  * One small shop, as the original Q-Shop publishes it, for tests. Names with
- * a space and a `+` on purpose (docs/QORTAL.md → Unusual names).
+ * a space and a `+` on purpose (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → Unusual names).
  *
- * The shapes follow the original app's code (docs/apps/Q-Shop+.md → Data
+ * The shapes follow the original app's code (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data
  * contract); tests that pin a write compare against objects built from these.
  */
 export const SELLER = "Seller Name";

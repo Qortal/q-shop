@@ -110,7 +110,7 @@ export function paymentSummary(payment: Payment | null | undefined): PaymentSumm
  */
 export function shopPaymentWarnings(payment: Payment | null | undefined, shop: ShopCoinSettings | null): string[] {
   const summary = paymentSummary(payment);
-  if (!summary.known) return ["This order names a coin Q-Shop+ doesn't know, so its payment can't be checked here."];
+  if (!summary.known) return ["This order names a coin Q-Shop doesn't know, so its payment can't be checked here."];
   if (!shop) return [];
   if (summary.kind === "asset") {
     const accepted = (shop.acceptedAssets ?? []).some((a) => a.id === summary.assetId);

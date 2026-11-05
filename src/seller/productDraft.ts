@@ -2,7 +2,7 @@
  * Product drafts: what the Add product and Edit forms put in
  * `global.productsToSave` until the seller publishes. The objects are the
  * original's (NewProduct.addProduct), key order included, because they are
- * stored as they are inside the catalogues (docs/apps/Q-Shop+.md → Data
+ * stored as they are inside the catalogues (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data
  * contract; pinned by ProductManager.pin.test.tsx and productDraft.test.ts).
  *
  * One fix (bug 3): an edit starts from the product's existing prices and keeps

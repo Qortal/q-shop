@@ -25,7 +25,7 @@ describe("a page that fails to load", () => {
   });
 
   it("shows the error screen when the reload didn't help, and leaves code errors alone", async () => {
-    sessionStorage.setItem("qshopplus-chunk-reload", String(Date.now()));
+    sessionStorage.setItem("qshop-chunk-reload", String(Date.now()));
     const failing = vi.fn().mockRejectedValue(loadError());
     await expect(retryImport(failing, 1)).rejects.toThrow(/dynamically imported module/);
     const broken = vi.fn().mockRejectedValue(new ReferenceError("x is not defined"));

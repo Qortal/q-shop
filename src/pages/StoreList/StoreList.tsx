@@ -1,5 +1,5 @@
 /**
- * The home page: the marketplace's front door (docs/apps/Q-Shop+.md →
+ * The home page: the marketplace's front door (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md →
  * Missing features 1–2, UX problems 5). A search over every shop, sorts and
  * filters, and a grid of shop cards that paints from one search, with each
  * shop's logo read only when its card nears the screen. The search text,

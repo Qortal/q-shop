@@ -3,7 +3,7 @@
  * and as QDN serves it now. A publish rebuilds the whole index, so it must
  * start from the newest one: one loaded with the page may predate a publish
  * from another tab or device, and building on it would drop the products that
- * publish added (docs/apps/Q-Shop+.md → Data contract: the index is the only
+ * publish added (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract: the index is the only
  * list of a shop's products).
  *
  * Nothing here changes the original's shape: the merged index is the

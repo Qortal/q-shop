@@ -104,7 +104,7 @@ export type DeliveredResult = "sent" | "declined" | "timeout" | "failed";
 /**
  * The buyer marks their order delivered: shown at once, and put back if the
  * publish doesn't happen (a decline in Hub's dialog is quiet). Hub gets its
- * 30 minutes (docs/QORTAL.md → pitfall 10).
+ * 30 minutes (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 10).
  */
 export async function markDelivered(store: OrderStore, order: Order, now = Date.now()): Promise<DeliveredResult> {
   const previous = store.getState().order.delivered[order.id];

@@ -7,7 +7,7 @@
  * and — when the product index (data container) couldn't be fetched for any
  * reason, a node hiccup included — published an empty one at start-up,
  * which hides every product of the shop if the seller accepts Hub's dialog
- * (docs/apps/Q-Shop+.md → Bugs 2). Here:
+ * (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Bugs 2). Here:
  * - one search, by name and identifier prefix, with metadata (titles show at
  *   once), oldest first like the original's choice of "current" shop;
  * - the current shop's JSON and index read once, through the session cache;

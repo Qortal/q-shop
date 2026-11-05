@@ -78,7 +78,7 @@ describe("AppShell on desktop", () => {
     // The bottom bar is for phones only.
     expect(screen.getAllByRole("navigation")).toHaveLength(1);
 
-    fireEvent.click(screen.getByRole("button", { name: "Q-Shop+ home" }));
+    fireEvent.click(screen.getByRole("button", { name: "Q-Shop home" }));
     expect(where()).toBe("/");
     fireEvent.click(screen.getByRole("button", { name: "Cart" }));
     expect(where()).toBe("/cart");

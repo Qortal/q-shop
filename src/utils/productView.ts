@@ -1,7 +1,7 @@
 /**
  * How a shop page shows its products (round 5, Simon): "grid" (tiles),
  * "list" (rows), or "auto", the app's own choice: tiles on wider screens,
- * rows on phones. Kept with the other settings (qshopplus-settings), saved
+ * rows on phones. Kept with the other settings (qshop-settings), saved
  * by Settings → Sync, and shared by every shop page through one small store.
  */
 import { useSyncExternalStore } from "react";

@@ -1,6 +1,6 @@
 /**
  * The checkout service: the original's calls in the original's order, and
- * the fixes around them (docs/apps/Q-Shop+.md → Money code changes). Every
+ * the fixes around them (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Money code changes). Every
  * write is mocked; nothing reaches a node.
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";

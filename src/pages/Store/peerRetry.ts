@@ -2,7 +2,7 @@
  * Resources the node hasn't downloaded yet fail at first and arrive a few
  * seconds later. Pages say "Fetching from peers…" and try again after 2, 4
  * and 8 seconds, then show "Not available on your node right now" with a
- * Retry button, never a skeleton that never ends (docs/QORTAL.md → pitfall 14).
+ * Retry button, never a skeleton that never ends (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 14).
  */
 
 const DEFAULT_DELAYS_MS = [2_000, 4_000, 8_000];

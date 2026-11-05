@@ -1,11 +1,11 @@
 /**
  * "New products" on the home page: the products in the four newest
  * catalogues (DOCUMENT `q-store-catalogue-<shortStoreId>-<uid>`, up to ten
- * products each, images inside; docs/apps/Q-Shop+.md → Data contract). Read
+ * products each, images inside; https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract). Read
  * only when the strip scrolls into view: one search of 4 rows, then each
  * catalogue with FETCH_QDN_RESOURCE, as the original's fetchCatalogues does.
  *
- * Trust (docs/QORTAL.md → pitfall 15): another name can publish a catalogue
+ * Trust (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 15): another name can publish a catalogue
  * under any identifier, so a product is shown only for a shop that is in the
  * shop index under the same name that published the catalogue, and it links
  * to that name's shop. Nothing here goes into the app's catalogue cache,

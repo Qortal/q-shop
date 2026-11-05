@@ -63,7 +63,7 @@ export function isForSale(product: Product | null | undefined): boolean {
 /**
  * The catalogue for a line, if it is loaded and belongs to the shop's owner.
  * The map is keyed by identifier only, and another name can publish the same
- * identifier (docs/QORTAL.md → pitfall 15): such a copy never prices a line.
+ * identifier (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 15): such a copy never prices a line.
  */
 export function catalogueFor(
   catalogues: Record<string, Catalogue>,

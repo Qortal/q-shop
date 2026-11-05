@@ -1,7 +1,7 @@
 /**
  * The shop form (Create shop, Edit shop) as plain values, and how they become
  * the StoreFields the payload builders take (qdn/payloads.ts). The shapes are
- * the original's (docs/apps/Q-Shop+.md → Data contract): `supportedCoins`
+ * the original's (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract): `supportedCoins`
  * starts with QORT; `foreignCoins` always carries `ARRR` (an empty string when
  * there is none, as the original wrote it); `acceptedAssets` and
  * `metaDescription` are the + app's additive fields.

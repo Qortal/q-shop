@@ -9,7 +9,7 @@
  *
  * The status is read from the node directly with the name encoded (Hub's
  * GET_QDN_RESOURCE_STATUS puts it into the URL as it is, so names with a
- * space or `/` failed: docs/QORTAL.md, pitfall 9).
+ * space or `/` failed: https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md, pitfall 9).
  */
 export interface ResourceRef {
   service: "VIDEO" | "FILE";
@@ -24,7 +24,7 @@ export interface ResourceStatus {
 
 /** Statuses after which asking again won't help. */
 const FAILED = new Set(["NOT_PUBLISHED", "MISSING_DATA", "BLOCKED", "UNSUPPORTED", "FAILED_TO_DOWNLOAD", "BUILD_FAILED"]);
-/** How long to wait for the node before saying it can't get it now (docs/QORTAL.md, pitfall 14). */
+/** How long to wait for the node before saying it can't get it now (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md, pitfall 14). */
 export const MAX_WAIT_MS = 5 * 60_000;
 
 export function resourceUrl(ref: ResourceRef): string {

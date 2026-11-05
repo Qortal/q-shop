@@ -6,7 +6,7 @@
  *
  * Hub refuses list actions on a public node (GO's default) and a declined
  * "access your list" dialog is the user's choice: neither is an error
- * (docs/QORTAL.md, pitfalls 11 and 13).
+ * (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md, pitfalls 11 and 13).
  */
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -102,7 +102,7 @@ export const BlockedNamesModal: React.FC<BlockedNamesModalProps> = ({ open, onCl
   if (unavailable === "public-node") {
     body = (
       <Typography variant="body2" color="text.secondary" role="status" sx={{ py: 1 }}>
-        {PUBLIC_NODE_TEXT}. Your block list lives on your own node; open Q-Shop+ there to change it.
+        {PUBLIC_NODE_TEXT}. Your block list lives on your own node; open Q-Shop there to change it.
       </Typography>
     );
   } else if (blockedNames === null) {
@@ -117,7 +117,7 @@ export const BlockedNamesModal: React.FC<BlockedNamesModalProps> = ({ open, onCl
     body = (
       <EmptyState
         title="Access not granted"
-        description="Allow Q-Shop+ to read your block list in Hub to see it here."
+        description="Allow Q-Shop to read your block list in Hub to see it here."
         actionLabel="Try again"
         onAction={retry}
       />

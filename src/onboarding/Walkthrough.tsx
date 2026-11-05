@@ -14,7 +14,7 @@ import { primarySoft } from "../hub-theme";
 import { TOURS, type TourId } from "./tours";
 
 /** The walkthrough version someone has seen: a new version (new features) shows again. */
-export const WALKTHROUGH_KEY = "qshopplus-walkthrough";
+export const WALKTHROUGH_KEY = "qshop-walkthrough";
 export const WALKTHROUGH_VERSION = "1";
 
 let open: TourId | null = null;
@@ -52,7 +52,7 @@ function markSeen(): void {
 }
 
 /** The seller guide opens by itself once, the first time someone's own shop page is ready. */
-export const SELLER_GUIDE_KEY = "qshopplus-seller-guide";
+export const SELLER_GUIDE_KEY = "qshop-seller-guide";
 
 export function useSellerGuideOnce(ready: boolean): void {
   useEffect(() => {

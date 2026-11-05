@@ -32,7 +32,7 @@ describe("the walkthrough", () => {
     expect(screen.queryByRole("dialog")).toBeNull();
     view.unmount();
     renderHost(true);
-    const dialog = await screen.findByRole("dialog", { name: "Welcome to Q-Shop+" });
+    const dialog = await screen.findByRole("dialog", { name: "Welcome to Q-Shop" });
     expect(within(dialog).getByRole("heading", { name: "Every Qortal shop in one place" })).toBeInTheDocument();
     fireEvent.click(within(dialog).getByRole("button", { name: "Next" }));
     expect(within(dialog).getByRole("heading", { name: "Find what you want" })).toBeInTheDocument();
@@ -47,7 +47,7 @@ describe("the walkthrough", () => {
 
   it("Skip closes it for good", async () => {
     renderHost(true);
-    const dialog = await screen.findByRole("dialog", { name: "Welcome to Q-Shop+" });
+    const dialog = await screen.findByRole("dialog", { name: "Welcome to Q-Shop" });
     fireEvent.click(within(dialog).getByRole("button", { name: "Skip" }));
     await waitFor(() => expect(screen.queryByRole("dialog")).toBeNull());
     expect(localStorage.getItem(WALKTHROUGH_KEY)).toBe("1");

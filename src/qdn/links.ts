@@ -1,12 +1,12 @@
 /**
  * In-app routes and `qortal://` deep links for shops and products, after
- * Q-Share+'s `utils/qortalLinks.ts` (docs/QORTAL.md → Deep links):
- * - the app name is written with a literal `+` (Hub never decodes it);
+ * Q-Share's `utils/qortalLinks.ts`:
+ * - the app name is written as published (Hub never decodes it, so a `+`
+ *   stays literal);
  * - every path segment after it is encoded, so names with spaces, `+` or `/`
  *   survive; React Router decodes them once, and `decodeParam` never throws.
  *
- * Copied links point at this build's published name (constants/plus.ts):
- * Simon's decision for night 1 is that Q-Shop+ links open Q-Shop+.
+ * Copied links point at this build's published name (constants/plus.ts).
  * The route shapes are the original's: `/<owner>/<storeId>` and
  * `/<owner>/<storeId>/<productId>/<catalogueId>`, so links copied from the
  * original Q-Shop also open here.

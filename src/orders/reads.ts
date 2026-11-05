@@ -1,6 +1,6 @@
 /**
  * Every Qortal read behind the order lists and the order dialog
- * (docs/apps/Q-Shop+.md → Data contract, Qortal call inventory):
+ * (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract, Qortal call inventory):
  *
  * - order rows: one search per page of 20, by `identifier` + `prefix`
  *   (never `query=`), the buyer's by name, the seller's for all buyers with
@@ -39,7 +39,7 @@ export const OPEN_CONCURRENCY = 5;
 
 /**
  * Waits before asking again for a resource the node doesn't have yet
- * (docs/QORTAL.md → pitfall 14). Tests shorten it.
+ * (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 14). Tests shorten it.
  */
 export const fetchRetry = { delaysMs: [2000, 4000, 8000] };
 
@@ -133,7 +133,7 @@ function orderCacheKey(row: Order): string {
 /**
  * One attempt at opening an order (FETCH + DECRYPT_DATA), shared with any
  * attempt already running and cached once it succeeds. The search row's
- * name, id and dates win over the JSON's (docs/QORTAL.md → pitfall 15), as
+ * name, id and dates win over the JSON's (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 15), as
  * the original merges them.
  */
 export async function openOrderOnce(row: Order, fresh = false): Promise<OpenOutcome> {

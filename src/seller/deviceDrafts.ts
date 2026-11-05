@@ -30,7 +30,7 @@ function backendFor(name: string): Backend {
       removeItem: async (key) => void map.delete(key),
     };
   }
-  return localForage.createInstance({ name: "qshopplus-drafts", storeName: name });
+  return localForage.createInstance({ name: "qshop-drafts", storeName: name });
 }
 
 /** The key of a name's draft for a shop. */

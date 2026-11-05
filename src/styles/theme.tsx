@@ -6,7 +6,7 @@ import { PHONE_MEDIA } from "../hooks/usePhoneLayout";
 //
 // Kept from the original: the fonts and type sizes, the 4 px corners, the
 // off-white / near-black surfaces, the cards, tooltips and scrollbars. Changed
-// for contrast (docs/DESIGN.md asks for 4.5:1 on text and controls): the blue
+// for contrast (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/DESIGN.md asks for 4.5:1 on text and controls): the blue
 // accent is "primary" in both modes, a step darker in light and a step lighter
 // in dark than the original #417Ed4. On phones (and phones held sideways) the
 // body text is smaller, 16 px and 14 px instead of 23 px and 18 px, which the

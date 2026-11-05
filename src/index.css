@@ -22,7 +22,7 @@
   margin: 0px;
   box-sizing: border-box;
   /* The Hub/GO frame's height, kept fresh by utils/hubFrame.ts (AppShell);
-     100dvh until it runs. Use it, never 100vh (docs/QORTAL.md, pitfall 3). */
+     100dvh until it runs. Use it, never 100vh (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md, pitfall 3). */
   --qshare-app-height: 100dvh;
 }
 
@@ -31,7 +31,7 @@ body {
 }
 
 /* clip, not hidden: overflow-x: hidden makes a scroll container that never
-   scrolls, and the sticky header and sub-headers stop sticking (docs/QORTAL.md,
+   scrolls, and the sticky header and sub-headers stop sticking (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md,
    pitfall 2). On #root, not html or body: while a menu or dialog is open, MUI
    hides the page's scrollbar with overflow: hidden on body and pads body by the
    scrollbar's width. With html clipped, body's overflow no longer reaches the
@@ -105,7 +105,7 @@ a:focus-visible {
   text-decoration: underline; /* Adds underline on hover and focus for accessibility */
 }
 
-/* Short and cheap motion only, and none for those who ask (docs/DESIGN.md → Motion). */
+/* Short and cheap motion only, and none for those who ask (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/DESIGN.md → Motion). */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

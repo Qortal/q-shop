@@ -1,6 +1,6 @@
 /**
  * The shop checkup card on the seller page's Overview (seller/checkup.ts):
- * what the shop still needs to use Q-Shop+ fully, each with a way to do it
+ * what the shop still needs to use Q-Shop 2 fully, each with a way to do it
  * (Fix categories, Edit shop, Delivery, Retire the delivery-fee products),
  * then what more it can do. Shops made in the original app see it first
  * thing; once every step is done it shrinks to a line that can be hidden.
@@ -24,7 +24,7 @@ import type { SellerTab } from "../pages/ProductManager/sellerTabs";
 import { visuallyHiddenSx } from "../pages/Store/a11y";
 import { openWalkthrough } from "../onboarding/Walkthrough";
 
-const HIDDEN_KEY = "qshopplus-checkup-hidden";
+const HIDDEN_KEY = "qshop-checkup-hidden";
 /** Catalogues read for titles and types (a shop has a few; past this the checkup works from the list alone). */
 const MAX_CATALOGUES = 10;
 
@@ -37,7 +37,7 @@ function hiddenFor(storeId: string): boolean {
 }
 
 /** Shops whose seller said the products found aren't delivery fees (this device). */
-const FEES_KEPT_KEY = "qshopplus-checkup-fees-kept";
+const FEES_KEPT_KEY = "qshop-checkup-fees-kept";
 
 function feesKeptFor(storeId: string): boolean {
   try {
@@ -234,10 +234,10 @@ export function ShopCheckup({
       <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, flexWrap: "wrap" }}>
         <Box sx={{ flex: "1 1 220px", minWidth: 0 }}>
           <Typography id="shop-checkup-title" component="h2" sx={{ fontSize: 18, fontWeight: 700 }}>
-            {all ? "Your shop is up to date" : "Get your shop ready for Q-Shop+"}
+            {all ? "Your shop is up to date" : "Bring your shop up to date"}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {all ? "Everything Q-Shop+ needs is set. More you can do:" : `${done} of ${items.length} done. Each step takes a minute.`}
+            {all ? "Everything this version of Q-Shop uses is set. More you can do:" : `${done} of ${items.length} done. Each step takes a minute.`}
           </Typography>
         </Box>
         <Button color="inherit" onClick={() => openWalkthrough("seller")} sx={{ minHeight: 44 }}>

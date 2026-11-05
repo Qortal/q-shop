@@ -1,6 +1,6 @@
 /**
  * What the order screens show, read from an order as the original stores it
- * (docs/apps/Q-Shop+.md → Data contract). Display only: amounts are the
+ * (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract). Display only: amounts are the
  * order's own numbers, never recomputed (money code lives in src/money).
  */
 import type { Order } from "../state/features/orderSlice";

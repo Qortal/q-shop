@@ -111,7 +111,7 @@ describe("shop form values", () => {
     expect(none.foreignCoins).toEqual({ ARRR: "" });
   });
 
-  it("saves a shop that names a coin Q-Shop+ no longer takes without it, as the original does", () => {
+  it("saves a shop that names a coin Q-Shop no longer takes without it, as the original does", () => {
     // Q-Shop+'s test builds offered BTC, LTC, DOGE, DGB and RVN.
     const values = shopFormValues({
       ...viewedStore,
@@ -211,7 +211,7 @@ describe("create shop", () => {
     await fillShop();
     expect(field(/^Shop id/)).toHaveValue("My-Shop-");
     expect(screen.getByText("q-store-general-My-Shop")).toBeInTheDocument();
-    expect(screen.getByText("qortal://APP/Q-Shop+/Seller%20Name/q-store-general-My-Shop")).toBeInTheDocument();
+    expect(screen.getByText("qortal://APP/Q-Shop/Seller%20Name/q-store-general-My-Shop")).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: "Create shop" }));
     await waitFor(() => expect(onCreated).toHaveBeenCalledWith("q-store-general-My-Shop"));

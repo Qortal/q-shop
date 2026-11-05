@@ -11,7 +11,7 @@ import { useBottomChromeHeight } from "../../layout/BottomNav/BottomNav";
 /**
  * Shows the app's notifications (Redux `notifications.alertTypes`) as toasts,
  * after Q-Share+'s: themed in all four looks, above the phone's bottom bar
- * (docs/QORTAL.md → pitfall 6), at most three at a time. Everything happens
+ * (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 6), at most three at a time. Everything happens
  * in an effect: nothing is dispatched during render, as the original did.
  */
 const Notification = () => {

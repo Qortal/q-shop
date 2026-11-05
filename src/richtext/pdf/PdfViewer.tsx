@@ -1,7 +1,7 @@
 /**
  * A PDF drawn page by page on a canvas, after Torq's PdfJsCanvasViewer
  * (Hub's frame and GO's WebView have no PDF plugin, so an <iframe> or
- * <embed> stays blank: docs/QORTAL.md, pitfall 16). One page at a time, at
+ * <embed> stays blank: https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md, pitfall 16). One page at a time, at
  * the screen's pixel density so text stays sharp on a phone; at 100 % it
  * fills the width (up to 1000 px). Previous/Next and ← →, zoom − + and Fit
  * and − + 0; a zoomed page scrolls. The page is drawn off screen first, so
@@ -34,7 +34,7 @@ const THEMES: { id: PdfTheme; label: string; hint: string }[] = [
   { id: "dim", label: "Dim", hint: "Dark frame, page as it is" },
   { id: "smart", label: "Smart", hint: "Dark pages for text, photos as they are" },
 ];
-const THEME_KEY = "qshopplus-pdf-theme";
+const THEME_KEY = "qshop-pdf-theme";
 
 function storedTheme(): PdfTheme {
   try {

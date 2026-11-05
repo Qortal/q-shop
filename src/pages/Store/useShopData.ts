@@ -1,6 +1,6 @@
 /**
  * Loading a shop, its products and its reviews for the shop and product
- * pages (docs/QORTAL.md → Efficiency rules, pitfall 14).
+ * pages (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → Efficiency rules, pitfall 14).
  *
  * The original sent two searches before reading a shop (one by identifier,
  * one with `limit: 0` only to learn whether the product index exists), then
@@ -256,7 +256,7 @@ export type CatalogueStatus = "fetching" | "failed";
 /**
  * Whether a catalogue in the shared map is `owner`'s. The map keeps
  * catalogues by identifier only, and another name can publish under the same
- * identifier (docs/QORTAL.md → pitfall 15): a shop that lists someone else's
+ * identifier (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 15): a shop that lists someone else's
  * catalogue ids puts its own copies there, with its own titles, prices and
  * descriptions. An entry counts when it was read under the owner's name
  * (`user`), or, without a `user` (the signed-in seller's own publish stores

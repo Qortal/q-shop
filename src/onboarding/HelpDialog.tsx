@@ -1,6 +1,6 @@
 /**
  * Help: short answers to what buyers and sellers ask first, in plain words,
- * from Settings. Q-Shop+ has no one in the middle (no escrow, no support
+ * from Settings. Q-Shop has no one in the middle (no escrow, no support
  * desk), so the answers say what that means and what to do.
  */
 import { useState } from "react";
@@ -14,7 +14,7 @@ export const HELP: { title: string; items: [string, string][] }[] = [
     items: [
       [
         "How do I pay?",
-        "At checkout, in a coin the shop takes: QORT always, and Pirate Chain (ARRR) or Q-Assets when the shop does. Hub asks you to confirm the payment, then to record your order. You pay the seller directly; Q-Shop+ never holds your money.",
+        "At checkout, in a coin the shop takes: QORT always, and Pirate Chain (ARRR) or Q-Assets when the shop does. Hub asks you to confirm the payment, then to record your order. You pay the seller directly; Q-Shop never holds your money.",
       ],
       [
         "What does delivery cost?",

@@ -5,7 +5,7 @@
  * - Rows are search rows `{ id, user, created, updated }` (`user` is the
  *   buyer: the name that published the order). Each list keeps the next
  *   page's offset in its OWN raw search rows (the original paged My orders
- *   with the seller's list length: docs/apps/Q-Shop+.md → Bugs 5).
+ *   with the seller's list length: https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Bugs 5).
  * - `hashMapOrders` holds decrypted orders by order id. An order that could
  *   not be opened gets an `openState` instead and never stops the others
  *   (Bugs 4).
@@ -54,7 +54,7 @@ export interface Payment {
   currency: string;
   transactionSignature?: string | null;
   arrrAddressUsed?: string;
-  /** + app, additive (docs/apps/Q-Shop+.md → Data contract). */
+  /** + app, additive (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data contract). */
   foreignAddressUsed?: string;
   foreignTxid?: string;
   assetId?: number;
@@ -198,7 +198,7 @@ function setRows(state: OrderState, kind: OrderListKind, rows: Order[]) {
 
 /**
  * Adds search rows to a list, newest first, one row per order id. Another
- * name can publish an order under the same identifier (docs/QORTAL.md →
+ * name can publish an order under the same identifier (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md →
  * pitfall 15); the order's status document is keyed by the id alone, so
  * only one of them can be the real one: the first published is kept.
  */

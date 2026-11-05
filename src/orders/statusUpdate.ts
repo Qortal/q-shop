@@ -7,7 +7,7 @@
  * The + app shows the new status at once and puts the old one back if the
  * publish doesn't happen; a decline in Hub's dialog is not an error. The key
  * is looked up fresh for every publish (never from the read cache), as the
- * original does, and Hub gets its 30 minutes (docs/QORTAL.md → pitfall 10).
+ * original does, and Hub gets its 30 minutes (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 10).
  */
 import type { Tracking } from "./tracking";
 import { buildStatusPublish } from "../qdn/payloads";

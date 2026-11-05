@@ -7,7 +7,7 @@
  * Held for the session in a small store that components read with
  * useSyncExternalStore. A shop that isn't on the node yet is fetched again
  * after 2, 4 and 8 seconds ("Fetching from peers…"), then reported as not
- * available, never as an endless placeholder (docs/QORTAL.md → pitfall 14).
+ * available, never as an endless placeholder (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 14).
  *
  * A shop's details are read again when the shop index (or a search) says the
  * shop changed since they were read (its QDN `updated` is newer), so a new

@@ -1,5 +1,5 @@
 /**
- * The phone's navigation bar (docs/DESIGN.md → Mobile): Shops, Products,
+ * The phone's navigation bar (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/DESIGN.md → Mobile): Shops, Products,
  * Cart, Orders and Sell, thumb-reachable at the bottom of the frame (Settings
  * is in the header, as five items is the most a bar takes). On a phone
  * held sideways the bar is compact (icon and label side by side, 48 px), as
@@ -22,7 +22,7 @@ import { cartLabel, navSection, useCartItemCount, usePendingOrderCount, useSell,
 
 /** Height of the bar without the safe-area inset; the spacer and the toasts use it too. */
 export const BOTTOM_NAV_HEIGHT = 64;
-/** The bar on a phone in landscape (docs/QORTAL.md → pitfall 3 asks for 52 px or less). */
+/** The bar on a phone in landscape (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 3 asks for 52 px or less). */
 export const COMPACT_BOTTOM_NAV_HEIGHT = 48;
 
 const LABEL_CLASS = "BottomNav-label";

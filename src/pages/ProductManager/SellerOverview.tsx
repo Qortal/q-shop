@@ -148,7 +148,7 @@ export function SellerOverview({
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-      {/* What the shop still needs for Q-Shop+ (seller/checkup.ts): first, for shops made in the original app. */}
+      {/* What the shop still needs for Q-Shop 2 (seller/checkup.ts): first, for shops made in the original app. */}
       <ShopCheckup storeId={storeId} onOpenTab={onOpenTab} onAddProduct={onAddProduct} />
       <Box component="section" aria-labelledby="seller-overview-numbers">
         <Typography id="seller-overview-numbers" component="h2" sx={{ fontSize: 18, fontWeight: 700, mb: 1.5 }}>

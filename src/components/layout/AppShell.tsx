@@ -1,5 +1,5 @@
 /**
- * The app's frame (docs/DESIGN.md → Layout and Mobile): the sticky header,
+ * The app's frame (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/DESIGN.md → Layout and Mobile): the sticky header,
  * the page in a <main> landmark, and on phones the bottom bar with a spacer
  * that keeps the page's end clear of it. It also keeps the Hub/GO frame
  * height fresh (utils/hubFrame.ts), which pages and dialogs use instead of

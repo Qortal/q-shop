@@ -3,7 +3,7 @@
  * exactly as the original Cart builds them (pinned by Cart.pin.test.tsx and
  * order.test.ts): same keys, same order of keys, same floats.
  *
- * Changes from the original, both fixes (docs/apps/Q-Shop+.md → Money code
+ * Changes from the original, both fixes (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Money code
  * changes): a product without a price stops the checkout with a message
  * before anything is paid (the original crashed); and text typed by the buyer
  * or the seller is HTML-escaped in the mail.

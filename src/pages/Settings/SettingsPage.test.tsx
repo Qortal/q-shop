@@ -58,7 +58,7 @@ describe("SettingsPage", () => {
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
     const sections = screen.getAllByRole("heading", { level: 2 }).map((h) => h.textContent);
     expect(sections).toEqual(["Account", "Appearance", "Shopping", "Sync", "About"]);
-    expect(screen.getByText("Q-Shop+ 1.0.1")).toBeInTheDocument();
+    expect(screen.getByText("Q-Shop 2.0.0")).toBeInTheDocument();
   });
 
   it("switches theme from the picker and saves it", () => {
@@ -93,8 +93,8 @@ describe("SettingsPage", () => {
   it("opens the changelog dialog", () => {
     renderSettings();
     fireEvent.click(screen.getByRole("button", { name: /What's new/ }));
-    expect(screen.getByRole("dialog")).toHaveTextContent("Q-Shop+ 1.0");
-    expect(screen.getByRole("dialog")).toHaveTextContent("Latest · 1.0.1");
+    expect(screen.getByRole("dialog")).toHaveTextContent("Q-Shop 2.0");
+    expect(screen.getByRole("dialog")).toHaveTextContent("Latest · 2.0.0");
   });
 
   describe("Account", () => {
@@ -249,7 +249,7 @@ describe("SettingsPage", () => {
       expect(q.calls).toHaveLength(0);
     });
 
-    it("Restore keeps the coin when the saved one is a coin Q-Shop+ no longer offers", async () => {
+    it("Restore keeps the coin when the saved one is a coin Q-Shop no longer offers", async () => {
       installQortalMock();
       stubFetch((url) =>
         url.startsWith(`/arbitrary/DOCUMENT/Buyer%2BOne/${SETTINGS_SYNC_IDENTIFIER}`)
@@ -295,13 +295,13 @@ describe("SettingsPage", () => {
   });
 
   describe("About", () => {
-    it("links the original app and shows the repository links as copyable text", () => {
+    it("shows the repository links as copyable text, and no link to another app", () => {
       renderSettings();
-      expect(screen.getByRole("link", { name: /Open Q-Shop/ })).toHaveAttribute("href", "qortal://APP/Q-Shop");
-      expect(screen.getByText("https://github.com/SJQortal/Q-Apps-Plus")).toBeInTheDocument();
+      expect(screen.queryByRole("link", { name: /Open Q-Shop/ })).toBeNull();
       expect(screen.getByText("https://github.com/Qortal/q-shop")).toBeInTheDocument();
+      expect(screen.getByText("https://github.com/SJQortal/Q-Apps-Plus")).toBeInTheDocument();
       expect(screen.getByRole("button", { name: "Copy the source link" })).toBeInTheDocument();
-      expect(screen.getByRole("button", { name: "Copy the upstream link" })).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Copy the Q-Shop+ link" })).toBeInTheDocument();
     });
   });
 });

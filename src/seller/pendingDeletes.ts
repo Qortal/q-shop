@@ -4,7 +4,7 @@
  * reported those catalogues as failed, and the seller closed the dialog).
  * Until they are cleared the products stay orderable by their links, so the
  * seller page offers Finish deleting (seller/FinishDeletesCard.tsx). Kept in
- * this browser (qshopplus-pending-deletes) per name and shop.
+ * this browser (qshop-pending-deletes) per name and shop.
  */
 import { useSyncExternalStore } from "react";
 import { PENDING_DELETES_STORAGE_KEY } from "../constants/plus";

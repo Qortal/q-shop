@@ -3,7 +3,7 @@
  * yet. The original sent the payment, then published the order; when that
  * publish was declined, failed or timed out the payment was gone, the cart
  * still full, and the message said "please try again", inviting a second
- * payment (docs/apps/Q-Shop+.md → Bugs 1). Now the paid order is kept here
+ * payment (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Bugs 1). Now the paid order is kept here
  * the moment Hub confirms the payment, the cart is emptied, and the buyer
  * finishes the order from here without paying again.
  *
@@ -66,7 +66,7 @@ export type OrderPart = "order" | "mail";
 
 type Store = Record<string, PendingOrder[]>;
 
-const EVENT = "qshopplus-pending-orders";
+const EVENT = "qshop-pending-orders";
 const deliveries = new Map<string, DeliveryInput>();
 
 function read(): Store {

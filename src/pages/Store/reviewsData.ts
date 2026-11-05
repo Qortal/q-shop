@@ -1,7 +1,7 @@
 /**
- * A shop's reviews, read the way the original stores them (docs/apps/
- * Q-Shop+.md → Data contract): DOCUMENT `q-store-review-<shortStoreId>-<uid>-
- * <rating×10>` by the reviewer, the rating in the identifier and a short copy
+ * A shop's reviews, read the way the original stores them
+ * (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md
+ * → Data contract): DOCUMENT `q-store-review-<shortStoreId>-<uid>-<rating×10>` by the reviewer, the rating in the identifier and a short copy
  * of the title and text in the metadata, the full text in the JSON.
  *
  * One search serves both the shop header's average and the reviews panel:

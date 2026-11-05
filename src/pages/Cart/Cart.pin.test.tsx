@@ -2,7 +2,7 @@
  * Pins what the original checkout sends, before any of it is touched:
  * the coin, the amount (as text), the recipient, the encrypted publish of the
  * order and the seller's mail, the public keys, the identifiers and the order
- * JSON. Written against the upstream Cart component (docs/apps/Q-Shop+.md →
+ * JSON. Written against the upstream Cart component (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md →
  * Money code), and ported unchanged to the cart page and checkout dialog that
  * replaced it: only the clicks that reach Pay differ, never an expectation.
  */

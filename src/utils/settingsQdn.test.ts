@@ -81,9 +81,9 @@ describe("Save to QDN", () => {
       action: "PUBLISH_QDN_RESOURCE",
       service: "DOCUMENT",
       name: "Buyer+One",
-      identifier: "qshopplus_settings",
+      identifier: "qshop_settings",
       data64: expect.any(String),
-      title: "Q-Shop+ settings",
+      title: "Q-Shop settings",
       filename: "settings.json",
     });
     expect(base64ToJson(String(calls[0].data64))).toEqual({ version: 1, theme: "hub20", preferredCoin: "ARRR" });

@@ -3,7 +3,7 @@
  * name's shops (useOwnShops), the app frame, and the dialogs that open from
  * anywhere. The original also published an empty product index here at
  * start-up when it couldn't read the shop's one; nothing is published here
- * now (docs/apps/Q-Shop+.md → Bugs 2).
+ * now (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Bugs 2).
  */
 import React, { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

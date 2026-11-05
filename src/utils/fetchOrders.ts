@@ -4,7 +4,7 @@
  * DOCUMENT_PRIVATE, identifier, encoding: base64}`, then `DECRYPT_DATA
  * {encryptedData}`, then a structure check.
  *
- * Change from the original, a fix (docs/apps/Q-Shop+.md → Bugs 4): a failed
+ * Change from the original, a fix (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Bugs 4): a failed
  * or unreadable order resolves to `{...content, isValid: false}` instead of
  * `undefined`, which made the caller throw and stop loading the rest.
  */
@@ -63,7 +63,7 @@ export function foreignOrderApp(json: unknown): ForeignOrderApp | null {
       name = "";
     }
   }
-  // As written: Hub doesn't decode an app name in a link (docs/QORTAL.md, deep links with "+").
+  // As written: Hub doesn't decode an app name in a link (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md, deep links with "+").
   return APP_NAME.test(name) ? { name, link: `qortal://APP/${name}` } : { name: "another app", link: null };
 }
 

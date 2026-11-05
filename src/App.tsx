@@ -11,7 +11,7 @@ import { THEME_STORAGE_KEY, themeConfig } from "./theme/qplus-theme";
 import { lazyWithRetry } from "./utils/lazyWithRetry";
 
 // Every screen loads on demand, so the first paint only carries the shell
-// (docs/QORTAL.md → Efficiency rules 8). Route shapes are the original's, so
+// (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → Efficiency rules 8). Route shapes are the original's, so
 // links copied from Q-Shop open here too.
 const StoreList = lazyWithRetry(() => import("./pages/StoreList/StoreList").then((m) => ({ default: m.StoreList })));
 const ProductsPage = lazyWithRetry(() => import("./pages/Products/ProductsPage").then((m) => ({ default: m.ProductsPage })));

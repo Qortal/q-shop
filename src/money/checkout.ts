@@ -7,7 +7,7 @@
  *   SEND_COIN {coin, destinationAddress, amount}   (amount = total.toFixed(8))
  *   PUBLISH_MULTIPLE_QDN_RESOURCES [order, mail], encrypt, [seller, buyer]
  *
- * What changed, each a fix (docs/apps/Q-Shop+.md → Money code changes):
+ * What changed, each a fix (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Money code changes):
  * - the paid order is saved (pendingOrders.ts) before it is published, the
  *   cart is emptied, and a failed, declined or timed-out publish is finished
  *   later with the same identifiers, never with a second payment;
@@ -56,7 +56,7 @@ import {
   type PendingOrder,
 } from "./pendingOrders";
 
-/** Hub allows a publish up to 30 minutes (docs/QORTAL.md → pitfall 10). */
+/** Hub allows a publish up to 30 minutes (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 10). */
 export const PUBLISH_TIMEOUT_MS = 30 * 60_000;
 
 export interface CheckoutShop extends ShopCoinSettings {

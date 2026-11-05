@@ -1,5 +1,5 @@
 /**
- * A product's description in two forms (docs/apps/Q-Shop+.md → Data
+ * A product's description in two forms (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md → Data
  * contract): `description`, the original's plain text, which Q-Shop shows as
  * it is, and, when the seller formatted it, `htmlDescription` (additive), the
  * editor's HTML in Quill 1's shape (richtext/quillHtml.ts), which Q-Shop+

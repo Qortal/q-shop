@@ -80,7 +80,7 @@ export function FixCategoriesDialog({ rows, onClose, onDrafted }: { rows: Seller
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <Typography variant="body2" color="text.secondary">
-          Q-Shop+ shops share one list of categories, so buyers can find the same kind of product in every shop. Each product below has its own
+          All shops share one list of categories, so buyers can find the same kind of product in every shop. Each product below has its own
           words from before; the one its title suggests is picked. Check them, then add them to your drafts and publish them together on the
           Products tab.
         </Typography>

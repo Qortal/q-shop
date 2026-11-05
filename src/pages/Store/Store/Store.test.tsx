@@ -304,7 +304,7 @@ describe("shop page", { timeout: 20_000 }, () => {
   it("tells the owner how many steps bring their shop up to date, and opens the checkup", async () => {
     renderShop(makeWorld(), SHOP_PATH, { name: "Seller Name" });
     // The fake shops use old categories and type their Ships to (policies aren't a step).
-    const banner = await screen.findByText(/steps? brings? your shop up to date for Q-Shop\+/);
+    const banner = await screen.findByText(/steps? brings? your shop up to date for this version of Q-Shop/);
     expect(banner.textContent).toMatch(/^2 steps/);
     fireEvent.click(screen.getByRole("button", { name: "Open the checkup" }));
     expect(await screen.findByText("Seller page")).toBeInTheDocument();
@@ -319,13 +319,13 @@ describe("shop page", { timeout: 20_000 }, () => {
   it("copies share links for the viewed shop, and for its products (not your own shop's id)", async () => {
     renderShop(makeWorld());
     fireEvent.click(await screen.findByRole("button", { name: "Share" }));
-    await waitFor(() => expect(copyText).toHaveBeenCalledWith("qortal://APP/Q-Shop+/Seller%20Name/q-store-general-my-shop"));
+    await waitFor(() => expect(copyText).toHaveBeenCalledWith("qortal://APP/Q-Shop/Seller%20Name/q-store-general-my-shop"));
     const card = (await screen.findByRole("heading", { level: 3, name: "Product 11" })).closest("article")!;
     fireEvent.contextMenu(card);
     fireEvent.click(await screen.findByRole("menuitem", { name: /Copy link/ }));
     await waitFor(() =>
       expect(copyText).toHaveBeenLastCalledWith(
-        "qortal://APP/Q-Shop+/Seller%20Name/q-store-general-my-shop/q-store-product-my-shop-P000000011/q-store-catalogue-my-shop-CAT0000001"
+        "qortal://APP/Q-Shop/Seller%20Name/q-store-general-my-shop/q-store-product-my-shop-P000000011/q-store-catalogue-my-shop-CAT0000001"
       )
     );
   });
@@ -438,7 +438,7 @@ describe("shop page", { timeout: 20_000 }, () => {
     chooseOption(selectField("Sort"), "Newest");
     await waitFor(() => expect(cardTitles()).toEqual(["Product 2", "Product 1"]));
     fireEvent.click(screen.getByRole("button", { name: "Share collection" }));
-    await waitFor(() => expect(copyText).toHaveBeenCalledWith("qortal://APP/Q-Shop+/Seller%20Name/q-store-general-my-shop?collection=GIFTSxxxx1"));
+    await waitFor(() => expect(copyText).toHaveBeenCalledWith("qortal://APP/Q-Shop/Seller%20Name/q-store-general-my-shop?collection=GIFTSxxxx1"));
 
     fireEvent.click(screen.getByRole("link", { name: "All products" }));
     await waitFor(() => expect(cardTitles()).toHaveLength(12));
@@ -545,7 +545,7 @@ describe("shop page", { timeout: 20_000 }, () => {
     fireEvent.click(screen.getByRole("button", { name: "Browse shops" }));
   });
 
-  it("reads a Q-Shop+ tombstone as a deleted shop too", async () => {
+  it("reads a Q-Shop tombstone as a deleted shop too", async () => {
     const world = makeWorld();
     world.shops[0].deleted = "marked";
     renderShop(world);

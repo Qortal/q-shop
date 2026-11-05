@@ -43,7 +43,7 @@ const PUBLIC_NODE =
 
 /**
  * True when Hub refused a list action (GET/ADD/DELETE_LIST_ITEMS) because it
- * runs on a public node (docs/QORTAL.md → pitfall 13): handle it quietly.
+ * runs on a public node (https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/QORTAL.md → pitfall 13): handle it quietly.
  */
 export function isPublicNodeRefusal(error: unknown): boolean {
   return PUBLIC_NODE.test(errorMessage(error, ""));

@@ -1,7 +1,7 @@
 /**
  * The one menu behind every shop card's "More" button: Open shop, Copy
  * link (the original's right-click "Copy Link", which now copies a
- * `qortal://APP/Q-Shop+/…` link with the owner encoded; docs/apps/Q-Shop+.md
+ * `qortal://APP/Q-Shop+/…` link with the owner encoded; https://github.com/SJQortal/Q-Apps-Plus/blob/main/docs/apps/Q-Shop%2B.md
  * → Bugs 9), and for another name's shop Add to favourites (favorites/) and
  * Hide shop (discovery/hiddenShops.ts). A menu on desktop, a bottom sheet on
  * phones; one for the whole grid, mounted only while open.

@@ -1,7 +1,7 @@
 /**
  * Whether Q-Shop+ shows names for sale (Simon, 2026-10-24: "add toggle in
  * settings to hide the Names sales from q-shop"): the Names tab and its
- * page. On by default; kept with the other settings (qshopplus-settings),
+ * page. On by default; kept with the other settings (qshop-settings),
  * saved by Settings → Sync, shared through one small store.
  */
 import { useSyncExternalStore } from "react";
